@@ -1,0 +1,173 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+    <title>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Signika:300,400,600,700" />
+    <link rel="stylesheet" type="text/css" href="{% static '_libs/font-awesome/css/font-awesome.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '_libs/no-ui-slider/jquery.nouislider.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '_libs/animate.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static '_css/style.css' %}" />
+
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" />
+</head>
+<body>
+    <header>
+
+        <div style="margin-left: 2%;margin-right: 5%;">
+
+            <div class="logo">
+
+                <a href="/"><img  height="40" src="{% static 'imagenes/logo_paho.png' %}" alt="logo" /></a>
+
+            </div>
+
+            <nav>
+
+                <ul class="menu">
+
+                    <li class="active"><a href="/">Inicio</a></li>
+
+
+                    <li><a href="/lnme">Listado Nacional de Medicamentos</a></li>
+
+                    <li>
+
+                        <a href="#">Contenido</a>
+                        <i class="fa fa-caret-down"></i>
+
+                        <ul class="submenu animated speed fadeInDown">
+
+                            <li><a href="{% url 'pagina_contenido' %}?id_contenido=1 ">Criterios técnicos para la selección</a></li>
+                            <li><a href="{% url 'pagina_contenido'  %}?id_contenido=2 ">Estructura del listado </a></li>
+                            <li><a href="{% url 'pagina_contenido'  %}?id_contenido=3 ">Conceptos de lista complementaria</a></li>
+                            <li><a href="{% url 'pagina_contenido'  %}?id_contenido=4 ">Antibiótico de reserva</a></li>
+                              <li><a href="{% url 'pagina_contenido'  %}?id_contenido=5 ">Restricciones de uso</a></li>
+                            <li><a href="{% url 'pagina_contenido'  %}?id_contenido=6 "> Niveles de atención</a></li>
+                            <li><a href="{% url 'pagina_contenido'  %}?id_contenido=7 "> Codificación</a></li>
+                            <li><a href="{% url 'pagina_contenido'  %}?id_contenido=8 "> Formas farmacéuticas</a></li>
+                            <li><a href="{% url 'pagina_contenido'  %}?id_contenido=9 ">Vías de administración </a></li>
+
+                        </ul>
+
+                    </li>
+<!--OTROS ENLACES-->
+
+ <li>
+
+                        <a href="#">Otros Enlaces</a>
+                        <i class="fa fa-caret-down"></i>
+
+                        <ul class="submenu animated speed fadeInDown">
+
+                            <li><a href="/acuerdo/">Acuerdo Ministerial de aprobación del LNME </a></li>
+                            <li><a href="/publicacion_gaceta/">Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME. </a></li>
+
+
+                        </ul>
+
+                    </li>
+                </ul>
+
+                <div class="menu-responsive"><i class="fa fa-bars"></i></div>
+
+            </nav>
+
+            <div class="clear">
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+{% block content %}
+
+        {% endblock %}
+
+
+    <footer>
+
+        <div class="center">
+
+            <div class="green-line">
+            </div>
+
+
+
+           <p class="">Todos los derechos reservados 2019</p>
+
+            <div class="clear">
+            </div>
+
+        </div>
+
+    </footer>
+<div></div>
+    <!--
+    facebook SDK
+    -->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+    <script src="{% static '_libs/jquery.js'%}"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="{% static '_libs/no-ui-slider/jquery.nouislider.all.min.js'%}"></script>
+    <script src="{% static '_libs/smoothscroll.js'%}"></script>
+    <script src="{% static '_libs/parallax.js'%}"></script>
+    <script src="{% static '_js/functions.js'%}"></script>
+
+
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css"></script>
+ <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+
+    <script>$(document).ready(function() {
+    $('#example').DataTable( {
+        responsive: true,
+        dom: 'Bfrtip',
+        buttons: [
+             'excel', 'pdf', 'print'
+        ],
+        language: {
+        search: "Filtrar:",
+
+         info: "Mostrando _START_ a  _END_ de _TOTAL_ entradas",
+             paginate: {
+            first:      "Primero",
+            previous:   "Anterior",
+            next:       "Siguiente",
+            last:       "último"
+
+        },
+    },
+
+    },
+    );
+
+
+} );
+    </script>
+
+</body>
+</html>

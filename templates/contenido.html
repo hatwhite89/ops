@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="loader">
+
+        <div class="loader-spinner">
+        </div>
+
+    </div>
+
+
+    
+    <section class="blog section-top-space">
+    
+        <i class="fa fa-newspaper-o background-icon"></i>
+    
+        <div class="center">
+        
+            <ul class="recent-news recent-news-full">
+            
+                <li class="recent-news-single">
+
+                    <div class="recent-news-full-content">
+                    
+                        <div class="content-wrapper">
+{% for item in lista_contenido %}
+                            <h1>{{item.titulo}}</h1>
+                            {{ item.cuerpo | safe }}
+
+                         {% endfor %}
+                        </div>
+                        
+
+                    
+                    </div>
+                    
+                    <div class="clear">
+                    </div>
+                
+                </li>
+            
+            </ul>
+            
+            <div class="sidebar">
+            
+                <div class="sidebar-background">
+                </div>
+
+                
+
+
+                
+                <div class="widget">
+                
+                    <h3><span style="color: #2C3459">Contenido</span></h3>
+                    <ul>
+                    {% for item in listar_contenido %}
+                        <li class="fa fa-check-circle"><a href="{% url 'pagina_contenido' %}?id_contenido={{ item.id }}">{{item.titulo}}</a></li><br>
+                       {% endfor %}
+                    
+                    </ul>
+                
+                </div>
+                
+
+            
+            </div>
+            
+            <div class="clear">
+            </div>
+        
+        </div>
+    
+    </section>
+    
+
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="blog section-top-space " style="margin-bottom: 10%;">
+
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+<section class="content section-top-space content-wrapper" style="overflow-x:auto;">
+<i class="fa fa-newspaper-o background-icon"></i>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <br><br><br>
+<section class="  center  " style="margin-bottom: 10%;">
+    <center>
+    <h1>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h1>
+</center>
+    </section>
+<section class="section-gray"></section>
+<table id="example" class="table table-bordered table-hover nowrap single-top" >
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Código ATC</th>
+                <th>Nombre del Medicamento</th>
+                <th>Concentración </th>
+                <th>Forma Farmacéutica</th>
+                <th>Vía de Administración</th>
+                <th>1er Nivel</th>
+                <th>2do Nivel</th>
+            </tr>
+        </thead>
+        <tbody>
+  {% for item in listado_medicamentos %}
+
+
+
+
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.codigo_atc}}</td>
+                <td>{{item.nombre_medicamento}}</td>
+
+                <td>{{item.contentracion}}</td>
+                <td>{{item.forma_farmaceutica}}</td>
+                <td>{{item.via_de_administracion}}</td>
+
+
+                     <td>
+                         {% if item.uaps == True %}
+                                    UAPS,
+                         {% endif %}
+                      {% if item.cis == True %}
+                                    CIS,
+                         {% endif %}
+                      {% if item.p == True %}
+                                    P
+                         {% endif %}
+                  </td>
+            <td>
+                 {% if item.hb == True %}
+                                    HB,
+                         {% endif %}
+                      {% if item.hg == True %}
+                                    HG,
+                         {% endif %}
+                      {% if item.hesp == True %}
+                                    HESP,
+                         {% endif %}
+            {% if item.hpsiq == True %}
+                                    HPSIQ,
+                         {% endif %}
+            </td>
+
+            </tr>
+
+{%  endfor %}
+
+        </tbody>
+        <tfoot>
+            <tr>
+               <th>No</th>
+                <th>Código ATC</th>
+                <th>Nombre del Medicamento</th>
+                <th>Concentración </th>
+                <th>Forma Farmacéutica</th>
+                <th>Vía de Administración</th>
+                  <th>1er Nivel</th>
+                 <th>2do Nivel</th>
+            </tr>
+        </tfoot>
+    </table>
+
+
+
+</section>
+</div>
+
+{% endblock %}
