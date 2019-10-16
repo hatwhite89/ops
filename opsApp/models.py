@@ -6,6 +6,7 @@ class Contenido(models.Model):
       cuerpo=RichTextField()
       fecha_publicacion=models.DateField()
 
+
       def __str__(self):
             return self.titulo
 class NivelAtencion(models.Model):
@@ -55,6 +56,7 @@ class ViasDeAdministracion(models.Model):
             return self.nombre_via_administracion
 
 class Medicamento(models.Model):
+
       categoria = models.ForeignKey(CategoriaMedicamento)
       sub_categoria = models.ForeignKey(SubCategoriaMedicamento)
       segunda_subcategoria=models.ForeignKey(SegundaSubCategoriaMedicamento)
@@ -81,3 +83,10 @@ class Medicamento(models.Model):
       def __str__(self):
             return self.nombre_medicamento
 
+class ArchivosGaceta(models.Model):
+      nombre_del_archivo=models.CharField(max_length=200,null=True)
+      descripcion= models.TextField(null=True)
+
+      archivo = models.FileField(upload_to="archivos/", null=True, blank=True)
+      def __str__(self):
+            return self.nombre_medicamento

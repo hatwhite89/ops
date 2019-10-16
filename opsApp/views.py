@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from opsApp.models import Contenido,Medicamento
+from opsApp.models import Contenido,Medicamento,ArchivosGaceta
 
 
 def main(request):
@@ -19,7 +19,8 @@ def listadoNacionalMedicamentos(request):
     return  render(request,'listado_nacional_medicamentos.html',{'listado_medicamentos':listado_medicamentos})
 
 def publicacionGaceta(request):
-    return render(request,'publicacion_gaceta.html')
+    lista_gaceta=ArchivosGaceta.objects.all()
+    return render(request,'publicacion_gaceta.html',{'lista_gaceta':lista_gaceta})
 
 def acuerdo(request):
     return render(request,'acuerdo.html')

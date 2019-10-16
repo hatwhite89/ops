@@ -1,8 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="blog section-top-space " style="margin-bottom: 10%;">
+<section class="blog section-top-space " style="margin-bottom: 10%;">
 
+<div class="center">
+
+    <h1>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h1>
+
+    </div>
 <style>
 table {
   border-collapse: collapse;
@@ -18,25 +23,24 @@ th, td {
 
 tr:nth-child(even){background-color: #f2f2f2}
 </style>
-<section class="content section-top-space content-wrapper" style="overflow-x:auto;">
-<i class="fa fa-newspaper-o background-icon"></i>
+
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
-    <br><br><br>
-<section class="  center  " style="margin-bottom: 10%;">
-    <center>
-    <h1>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h1>
-</center>
-    </section>
-<section class="section-gray"></section>
-<table id="example" class="table table-bordered table-hover nowrap single-top" >
+<section class="content section-top-space section-gray" style="overflow-x:auto;">
+
+
+<section style="background-color: #ffffff;">
+<table id="example" class="table table-bordered table-hover nowrap single-top"  style="background-color: #cccccc;">
         <thead>
             <tr>
                 <th>No</th>
                 <th>Código ATC</th>
+                <th>Categoria</th>
+                <th>SubCategoria</th>
                 <th>Nombre del Medicamento</th>
                 <th>Concentración </th>
                 <th>Forma Farmacéutica</th>
                 <th>Vía de Administración</th>
+                <th>Envase primario</th>
                 <th>1er Nivel</th>
                 <th>2do Nivel</th>
             </tr>
@@ -50,12 +54,14 @@ tr:nth-child(even){background-color: #f2f2f2}
             <tr>
                 <td>{{item.id}}</td>
                 <td>{{item.codigo_atc}}</td>
+            <td>{{ item.categoria }}</td>
+            <td>{{ item.sub_categoria }}</td>
                 <td>{{item.nombre_medicamento}}</td>
 
                 <td>{{item.contentracion}}</td>
                 <td>{{item.forma_farmaceutica}}</td>
                 <td>{{item.via_de_administracion}}</td>
-
+<td>{{ item.envase_primario }}</td>
 
                      <td>
                          {% if item.uaps == True %}
@@ -90,21 +96,24 @@ tr:nth-child(even){background-color: #f2f2f2}
         </tbody>
         <tfoot>
             <tr>
-               <th>No</th>
+              <th>No</th>
                 <th>Código ATC</th>
+                <th>Categoria</th>
+                <th>SubCategoria</th>
                 <th>Nombre del Medicamento</th>
                 <th>Concentración </th>
                 <th>Forma Farmacéutica</th>
                 <th>Vía de Administración</th>
-                  <th>1er Nivel</th>
-                 <th>2do Nivel</th>
+                <th>Envase primario</th>
+                <th>1er Nivel</th>
+                <th>2do Nivel</th>
             </tr>
         </tfoot>
     </table>
-
+</section>
 
 
 </section>
-</div>
+</section>
 
 {% endblock %}

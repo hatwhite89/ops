@@ -764,7 +764,7 @@ a.button {
  */
 
 header {
-    height: 75px;
+    height: 90px;
     width: 100%;
     background-color: #0099d9 ;
 
@@ -774,13 +774,13 @@ header {
 }
 
 header .logo {
-    float: left;
+
     padding-top: 26px;
 }
 
 header .menu {
     float: right;
-    margin-top: 8px;
+    margin-top: 0px;
 }
 
 header .menu li {
@@ -794,7 +794,7 @@ header .menu li button.menu-element {
     color: #ffffff;
     font-weight: 600;
     font-size: 14px;
-    padding: 20px;
+    padding: 5px;
     -webkit-transition: all 0.15s linear;
     -moz-transition: all 0.15s linear;
     transition: all 0.15s linear;
@@ -849,7 +849,7 @@ header .submenu:before {
     height: 8px;
     content: ' ';
     position: absolute;
-    background: #91da32;
+    background:  #fdb63a;
     -webkit-transform: rotate( 45deg );
     -moz-transform: rotate( 45deg );
     transform: rotate( 45deg );
@@ -937,7 +937,7 @@ header .menu-responsive {
     header .menu {
         position: absolute;
         float: none;
-        background: #91da32;
+        background:  #fdb63a;
         width: 215px;
         max-height: 300px;
         overflow-y: scroll;
