@@ -189,7 +189,7 @@
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
 
-    
+
     <script>$(document).ready(function() {
     $('#example').DataTable( {
         responsive: true,
@@ -199,8 +199,11 @@
                 orientation: 'landscape',
                 pageSize: 'LEGAL'}
         ],
+ pageLength : 9,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
         language: {
         search: "Filtrar:",
+
 
          info: "Mostrando _START_ a  _END_ de _TOTAL_ entradas",
              paginate: {
