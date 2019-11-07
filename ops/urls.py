@@ -24,8 +24,7 @@ urlpatterns = [
     url(r'^$', views.main, name="main"),
     url('^admin/', admin.site.urls),
     url(r'^pagina_contenido/$', views.paginaContenido, name="pagina_contenido"),
-    url(r'^publicacion_gaceta/$', views.publicacionGaceta, name="publicacion_gaceta"),
-    url(r'^acuerdo/$', views.acuerdo, name="acuerdo"),
+    url(r'^archivos/$', views.archivo, name="archivos"),
     url(r'^lnme/$', views.listadoNacionalMedicamentos, name="lnme"),
 ]
 if settings.DEBUG:

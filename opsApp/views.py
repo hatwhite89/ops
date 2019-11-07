@@ -18,9 +18,9 @@ def listadoNacionalMedicamentos(request):
     listado_medicamentos= Medicamento.objects.all()
     return  render(request,'listado_nacional_medicamentos.html',{'listado_medicamentos':listado_medicamentos})
 
-def publicacionGaceta(request):
+def archivo(request):
     lista_gaceta=ArchivosGaceta.objects.all()
-    return render(request,'publicacion_gaceta.html',{'lista_gaceta':lista_gaceta})
+    return render(request, 'archivos.html', {'lista_gaceta':lista_gaceta})
 
 def acuerdo(request):
     return render(request,'acuerdo.html')

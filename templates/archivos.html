@@ -23,36 +23,33 @@
             <div class="green-line">
             </div>
 
-            <div class="content-left embed-container">
+            <div class=" embed-container">
 
-<iframe class="responsive" src="{% static 'archivo/LA GACETA 29.12.2018 (ACUERDO LNME 2018).pdf' %}"
-style="" frameborder="0"></iframe>
-            </div>
-
-            <div class="content-right">
-
-                <h2>Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME</h2>
+       <h2>Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME</h2>
                 <ul class="documents without-margin-bottom">
 
                     <li class="document document-pdf">
 {% for item in lista_gaceta %}
                         <i class="fa fa-file-pdf-o"></i>
 
-                        <a href="/archivo/{{ item.archivo }}">Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME</a>
-                        <span>Tamaño: 3.7 MB</span>
+                        <a href="/archivo/{{ item.archivo}}">Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME</a>
+                        <span id="mb"></span>
 
+    <script>
+var mb=Math.round({{ item.archivo.size}}/1048576) ;
+var tam="Tamaño";
+document.getElementById('mb').innerHTML = tam+" "+mb+" MB";
+</script>
                         <div class="clear">
                         </div>
 {% endfor %}
                     </li>
 
 
-
-
-
                 </ul>
 
             </div>
+
 
             <div class="clear">
             </div>

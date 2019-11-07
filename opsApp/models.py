@@ -89,4 +89,4 @@ class ArchivosGaceta(models.Model):
 
       archivo = models.FileField(upload_to="archivos/", null=True, blank=True)
       def __str__(self):
-            return self.nombre_medicamento
+            return self.nombre_del_archivo
