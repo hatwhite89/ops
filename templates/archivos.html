@@ -30,9 +30,10 @@
 
                     <li class="document document-pdf">
 {% for item in lista_gaceta %}
-                        <i class=""><img height="60" width="40" src="/media/{{ item.imagen_vista_previa }}"></i>
+                        <i class=""><img border="2" height="60" width="40" src="/media/{{ item.imagen_vista_previa }}"></i>
 
-                        <a href="/media/{{ item.archivo}}">Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME</a>
+                        <a href="/media/{{ item.archivo}}">{{item.nombre_del_archivo}}</a>
+
                         <span id="mb"></span>
 
     <script>
