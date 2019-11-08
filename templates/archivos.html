@@ -27,14 +27,16 @@
 
        <h2>Publicaciones LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME)</h2>
                 <ul class="documents without-margin-bottom">
-
-                    <li class="document document-pdf">
 {% for item in lista_gaceta %}
+                    <li class="document document-pdf">
+
                         <i class=""><img border="2" height="60" width="40" src="/media/{{ item.imagen_vista_previa }}"></i>
 
                         <a href="/media/{{ item.archivo}}">{{item.nombre_del_archivo}}</a>
 
                         <span id="mb"></span>
+    <br>
+    <br>
 
     <script>
 var mb=Math.round({{ item.archivo.size}}/1048576) ;
@@ -43,9 +45,9 @@ document.getElementById('mb').innerHTML = tam+" "+mb+" MB";
 </script>
                         <div class="clear">
                         </div>
-{% endfor %}
-                    </li>
 
+                    </li>
+{% endfor %}
 
                 </ul>
 
