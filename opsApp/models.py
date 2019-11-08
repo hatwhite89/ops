@@ -86,6 +86,7 @@ class Medicamento(models.Model):
 class ArchivosGaceta(models.Model):
       nombre_del_archivo=models.CharField(max_length=200,null=True)
       descripcion= models.TextField(null=True)
+      imagen_vista_previa= models.ImageField(upload_to="archivos/", null=True, blank=True)
 
       archivo = models.FileField(upload_to="archivos/", null=True, blank=True)
       def __str__(self):
