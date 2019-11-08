@@ -25,12 +25,12 @@
 
             <div class=" embed-container">
 
-       <h2>Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME</h2>
+       <h2>Publicaciones LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME)</h2>
                 <ul class="documents without-margin-bottom">
 
                     <li class="document document-pdf">
 {% for item in lista_gaceta %}
-                        <i class="fa fa-file-pdf-o"></i>
+                        <i class=""><img height="60" width="40" src="/media/{{ item.imagen_vista_previa }}"></i>
 
                         <a href="/media/{{ item.archivo}}">Publicación del Diario Oficial La Gaceta, en la cual se aprueba la LNME</a>
                         <span id="mb"></span>
