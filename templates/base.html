@@ -25,7 +25,7 @@
     <header>
         <div  >
             <center>
-     <a href="/" ><img   height="80" src="{% static 'imagenes/logo_paho.png' %}" alt="logo" /></a>
+     <a href="/" ><img   height="110" src="{% static 'imagenes/logo_paho.png' %}" alt="logo" /></a>
 </center>
 </div>
 
@@ -121,7 +121,7 @@
                     </li>
                     <li>
 
-                        <h4><a href="https://www.paho.org/hq/index.php?lang=en" style="color: white;text-decoration: none;">OPS HONDURAS</a></h4>
+                        <h4><a href="https://www.paho.org/hon/" style="color: white;text-decoration: none;">OPS HONDURAS</a></h4>
                         <ul class="sub">
 
                                                        <li ><a style="color: white;text-decoration: none;" href="https://www.facebook.com/OPS-Honduras-PAHO-Honduras-157522440950103/" target="_blank">Facebook</a></li>
@@ -192,9 +192,10 @@
 $('#example thead tr').clone(true).appendTo( '#example thead' );
 $('#example thead tr:eq(1) th').each( function (i) {
     var title = $(this).text();
-    $(this).html( '<input type="text" placeholder="Filtrar '+title+'" />' );
 
-    $( 'input', this ).on( 'keyup change', function () {
+if (i >0){
+    $(this).html( '<input type="text" placeholder="Filtrar '+title+'" />' );
+       $( 'input', this ).on( 'keyup change', function () {
         if ( table.column(i).search() !== this.value ) {
             table
                 .column(i)
@@ -202,6 +203,8 @@ $('#example thead tr:eq(1) th').each( function (i) {
                 .draw();
         }
     } );
+}
+
 } );
 
 
