@@ -66,29 +66,10 @@ tr:nth-child(even){background-color: #f2f2f2}
 <td>{{ item.envase_primario }}</td>
 
                      <td>
-                         {% if item.uaps == True %}
-                                    UAPS,
-                         {% endif %}
-                      {% if item.cis == True %}
-                                    CIS,
-                         {% endif %}
-                      {% if item.p == True %}
-                                    P
-                         {% endif %}
+                         {% if item.uaps == True %}UAPS,{% endif %}{% if item.cis == True %}CIS,{% endif %}{% if item.p == True %}P{% endif %}
                   </td>
             <td>
-                 {% if item.hb == True %}
-                                    HB,
-                         {% endif %}
-                      {% if item.hg == True %}
-                                    HG,
-                         {% endif %}
-                      {% if item.hesp == True %}
-                                    HESP,
-                         {% endif %}
-            {% if item.hpsiq == True %}
-                                    HPSIQ,
-                         {% endif %}
+                 {% if item.hb == True %}HB,{% endif %}{% if item.hg == True %}HG,{% endif %}{% if item.hesp == True %}HESP,{% endif %}{% if item.hpsiq == True %}HPSIQ{% endif %}
             </td>
 
             </tr>
