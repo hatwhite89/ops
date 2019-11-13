@@ -91,3 +91,8 @@ class ArchivosGaceta(models.Model):
       archivo = models.FileField(upload_to="archivos/", null=True, blank=True)
       def __str__(self):
             return self.nombre_del_archivo
+class link_descarga(models.Model):
+      nombre_link = models.CharField(max_length=200,null=True)
+      link= models.TextField(null=True)
+      def __str__(self):
+            return self.nombre_link

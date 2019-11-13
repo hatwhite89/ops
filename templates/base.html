@@ -23,9 +23,10 @@
 
 
     <header>
-        <div  style="margin-right: 30%;margin-left: 30%">
-     <a href="/" ><img class="responsive"  height="60" src="{% static 'imagenes/logo_paho.png' %}" alt="logo" /></a>
-
+        <div  >
+            <center>
+     <a href="/" ><img   height="80" src="{% static 'imagenes/logo_paho.png' %}" alt="logo" /></a>
+</center>
 </div>
 
 
@@ -41,8 +42,16 @@
                     <li class="active"><a href="/">Inicio</a></li>
 
 
-                    <li><a href="/lnme">Listado Nacional de Medicamentos</a></li>
+                    <li>
+                        <a href="#">Listado Nacional de Medicamentos</a>
+                        <i class="fa fa-caret-down"></i>
 
+                        <ul class="submenu animated speed fadeInDown">
+                       <li> <a href="/lnme2">Detalle</a></li>
+                               <li>     <a href="/lnme">Todos</a></li>
+       </ul>
+
+                    </li>
                     <li>
 
                         <a href="#">Contenido</a>
@@ -86,7 +95,7 @@
         {% endblock %}
 
 
-    <footer>
+    <footer >
 
         <div  >
 
@@ -97,13 +106,14 @@
 <h1>Otros Links</h1>
                 <br>
                 <ul class="left">
+                    <li><a href="{% url 'politicas' %}" style="color: white;text-decoration: none;text-transform: uppercase;" >Política de uso</a></li>
                    <li>
 
-                        <h4><a href="http://www.salud.gob.hn/site/" style="color: #060162">Secretaría de Salud</a></h4>
+                        <h4><a href="http://www.salud.gob.hn/site/" style="color: white;text-decoration: none;">Secretaría de Salud</a></h4>
                         <ul class="sub">
 
-                               <li ><a style="color: white" href="https://www.facebook.com/saludhn/" target="_blank" >Facebook</a></li>
- <li ><a style="color: white" href="https://twitter.com/saludhn?lang=es" target="_blank">Twitter</a></li>
+                               <li ><a style="color: white;text-decoration: none;" href="https://www.facebook.com/saludhn/" target="_blank" >Facebook</a></li>
+ <li ><a style="color: white;text-decoration: none;" href="https://twitter.com/saludhn?lang=es" target="_blank">Twitter</a></li>
 
 
                         </ul>
@@ -111,11 +121,11 @@
                     </li>
                     <li>
 
-                        <h4><a href="https://www.paho.org/hq/index.php?lang=en" style="color: #060162;">OPS</a></h4>
+                        <h4><a href="https://www.paho.org/hq/index.php?lang=en" style="color: white;text-decoration: none;">OPS HONDURAS</a></h4>
                         <ul class="sub">
 
-                                                       <li ><a style="color: white" href="https://www.facebook.com/OPS-Honduras-PAHO-Honduras-157522440950103/" target="_blank">Facebook</a></li>
- <li ><a style="color: white" href="https://twitter.com/pahowho?lang=es"  target="_blank">Twitter</a></li>
+                                                       <li ><a style="color: white;text-decoration: none;" href="https://www.facebook.com/OPS-Honduras-PAHO-Honduras-157522440950103/" target="_blank">Facebook</a></li>
+ <li ><a style="color: white;text-decoration: none;" href="https://twitter.com/pahowho?lang=es"  target="_blank">Twitter</a></li>
 
                         </ul>
 
@@ -131,7 +141,7 @@
 
             <ul class="right">
 
-                <li style="color: white; margin-right: 5%;">Copyright © Todos los derechos reservados,2019.</li>
+                <li style="color: white; margin-right: 5%;">© Organización Panamericana de la Salud 2019.</li>
 
             </ul>
 

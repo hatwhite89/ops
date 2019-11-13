@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="blog section-top-space " style="margin-bottom: 10%;">
+
+<div class="center">
+
+    <h1>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h1>
+
+    </div>
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<section class="content section-top-space section-gray" style="overflow-x:auto;">
+
+
+<section >
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>No</th>
+
+                <th>Categoria</th>
+ <th>Ver Medicamentos</th>
+            </tr>
+        </thead>
+        <tbody>
+  {% for item in lista_categoria %}
+
+
+
+
+            <tr>
+                <td>{{item.id}}</td>
+
+            <td>{{ item.nombre_categoria }}</td>
+
+<td><a href="{% url 'lnm_detalle'  %}?id_categoria={{ item.id }}">ver</a></td>
+
+
+
+            </tr>
+
+{%  endfor %}
+
+        </tbody>
+        <tfoot>
+            <tr>
+              <th>No</th>
+
+                <th>Categoria</th>
+ <th>Ver Medicamentos</th>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+
+</section>
+</section>
+
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="blog section-top-space " style="margin-bottom: 10%;">
+
+<div class="center">
+
+    <h1>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h1>
+
+    </div>
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<section class="content section-top-space section-gray" style="overflow-x:auto;">
+
+
+<section >
+<table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Código ATC</th>
+                <th>Categoria</th>
+                <th>SubCategoria</th>
+                <th>Nombre del Medicamento</th>
+                <th>Concentración </th>
+                <th>Forma Farmacéutica</th>
+                <th>Vía de Administración</th>
+                <th>Envase primario</th>
+                <th>1er Nivel</th>
+                <th>2do Nivel</th>
+            </tr>
+        </thead>
+        <tbody>
+  {% for item in listado_medicamentos %}
+
+
+
+
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.codigo_atc}}</td>
+            <td>{{ item.categoria }}</td>
+            <td>{{ item.sub_categoria }}</td>
+                <td>{{item.nombre_medicamento}}</td>
+
+                <td>{{item.contentracion}}</td>
+                <td>{{item.forma_farmaceutica}}</td>
+                <td>{{item.via_de_administracion}}</td>
+<td>{{ item.envase_primario }}</td>
+
+                     <td>
+                         {% if item.uaps == True %}
+                                    UAPS,
+                         {% endif %}
+                      {% if item.cis == True %}
+                                    CIS,
+                         {% endif %}
+                      {% if item.p == True %}
+                                    P
+                         {% endif %}
+                  </td>
+            <td>
+                 {% if item.hb == True %}
+                                    HB,
+                         {% endif %}
+                      {% if item.hg == True %}
+                                    HG,
+                         {% endif %}
+                      {% if item.hesp == True %}
+                                    HESP,
+                         {% endif %}
+            {% if item.hpsiq == True %}
+                                    HPSIQ,
+                         {% endif %}
+            </td>
+
+            </tr>
+
+{%  endfor %}
+
+        </tbody>
+        <tfoot>
+            <tr>
+              <th>No</th>
+                <th>Código ATC</th>
+                <th>Categoria</th>
+                <th>SubCategoria</th>
+                <th>Nombre del Medicamento</th>
+                <th>Concentración </th>
+                <th>Forma Farmacéutica</th>
+                <th>Vía de Administración</th>
+                <th>Envase primario</th>
+                <th>1er Nivel</th>
+                <th>2do Nivel</th>
+            </tr>
+        </tfoot>
+    </table>
+</section>
+
+
+</section>
+</section>
+
+{% endblock %}
