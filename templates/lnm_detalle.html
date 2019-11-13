@@ -33,10 +33,9 @@ tr:nth-child(even){background-color: #f2f2f2}
         <thead>
             <tr>
                 <th>No</th>
-                     <th>Nombre del Medicamento</th>
+                     <th >Nombre del Medicamento</th>
                 <th>Código ATC</th>
-                <th>Categoría</th>
-                <th>SubCategoría</th>
+
 
                 <th>Concentración </th>
                 <th>Forma Farmacéutica</th>
@@ -54,10 +53,9 @@ tr:nth-child(even){background-color: #f2f2f2}
 
             <tr>
                 <td>{{item.id}}</td>
-                 <td>{{item.nombre_medicamento}}</td>
+                 <td title="{{ item.categoria }} / {{ item.sub_categoria }}">{{item.nombre_medicamento}}</td>
                 <td>{{item.codigo_atc}}</td>
-            <td>{{ item.categoria }}</td>
-            <td>{{ item.sub_categoria }}</td>
+
 
 
                 <td>{{item.contentracion}}</td>
@@ -101,8 +99,7 @@ tr:nth-child(even){background-color: #f2f2f2}
               <th>No</th>
                     <th>Nombre del Medicamento</th>
                 <th>Código ATC</th>
-                <th>Categoría</th>
-                <th>SubCategoría</th>
+           
 
                 <th>Concentración </th>
                 <th>Forma Farmacéutica</th>
