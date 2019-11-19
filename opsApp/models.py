@@ -62,7 +62,7 @@ class Medicamento(models.Model):
       segunda_subcategoria=models.ForeignKey(SegundaSubCategoriaMedicamento)
       codigo_atc = models.CharField(max_length=200)
       nombre_medicamento = models.CharField(max_length=200)
-      contentracion = models.CharField(max_length=200)
+      contentracion = models.TextField()
       forma_farmaceutica = models.ForeignKey(FormaFarmaceutica)
       via_de_administracion = models.ForeignKey(ViasDeAdministracion)
       envase_primario = models.ForeignKey(EnvasePrimario)
