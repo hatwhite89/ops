@@ -30,10 +30,10 @@
                     <h2>Listado Nacional de Medicamentos Esenciales</h2>
                     <h3>Disponible en Google Play Store y<br /> AppStore</h3>
                     {% for item in lista_android %}
-                    <button class="button button-navy-blue "  > <a href="{{ item.link }} ">Descargar</a> <i class="fa fa-android"></i></button>
+                   <a href="{{ item.link }}"> <button class="button button-navy-blue "   > Descargar<i class="fa fa-android"></i></button></a>
                     {% endfor %}
                      {% for item in lista_ios %}
-         <button class="button button-navy-blue "  ><a href="{{ item.link }} ">Descargar</a> <i class="fa fa-apple"></i></button>
+        <a href="{{ item.link }}"> <button class="button button-navy-blue "  >Descargar <i class="fa fa-apple"></i></button></a>
                   {% endfor %}
                 </div>
             
@@ -48,12 +48,12 @@
                     
                     <h2  style="color: white">Busca la aplicación en Play Store y AppStore</h2>
   <h3 style="color: white">Disponible en Google Play Store y<br /> AppStore</h3>
- {% for item in lista_android %}
-                    <button class="button " style="color: white;" ><a href="{{ item.link }} ">Descargar</a><i class="fa fa-android"></i></button>
-                      {% endfor %}
-                  {% for item in lista_ios %}
-         <button class="button  " style="color: white;" ><a href="{{ item.link }} ">Descargar</a>r <i class="fa fa-apple"></i></button>
+      {% for item in lista_android %}
+                   <a href="{{ item.link }}"> <button class="button button-navy-blue "   > Descargar<i class="fa fa-android"></i></button></a>
                     {% endfor %}
+                     {% for item in lista_ios %}
+        <a href="{{ item.link }}"> <button class="button button-navy-blue "  >Descargar <i class="fa fa-apple"></i></button></a>
+                  {% endfor %}
                 </div>
 
                 </div>
