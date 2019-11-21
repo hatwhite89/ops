@@ -1,0 +1,11 @@
+diagram==0.2.28
+Django==1.11.23
+django-ckeditor==5.4.0
+django-js-asset==1.2.2
+freeze==1.0.10
+Pillow==6.2.1
+psycopg2==2.8.3
+pytz==2019.2
+six==1.13.0
+sqlparse==0.3.0
+uml==0.1.0
