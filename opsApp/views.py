@@ -1,12 +1,13 @@
 from django.shortcuts import render
 
 # Create your views here.
-from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento
+from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga
 
 
 def main(request):
-
-    return render(request,'index.html',)
+    link_android = link_android_descarga.objects.all()
+    link_ios = link_android_descarga.objects.all()
+    return render(request,'index.html',{'lista_android':link_android,'lista_ios':link_ios})
 
 def paginaContenido(request):
     id_contenido=request.GET['id_contenido']
