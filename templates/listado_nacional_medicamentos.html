@@ -4,7 +4,7 @@
 <section class="blog section-top-space " style="margin-bottom: 10%;">
 
 <div class="center">
-
+<br><br>
     <h1>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h1>
 
     </div>
@@ -33,8 +33,8 @@ tr:nth-child(even){background-color: #f2f2f2}
         <thead>
             <tr>
                 <th>No</th>
-                      <th>Código ATC</th>
-                  <th>Nombre del Medicamento</th>
+                         <th>Código ATC</th>
+                     <th >Nombre del Medicamento</th>
 
 
 
@@ -54,8 +54,8 @@ tr:nth-child(even){background-color: #f2f2f2}
 
             <tr>
                 <td>{{ forloop.counter }}</td>
-              <td>{{item.codigo_atc}}</td>
-               <td title="{{ item.categoria }} / {{ item.sub_categoria }}">{{item.nombre_medicamento}}</td>
+                  <td>{{item.codigo_atc}}</td>
+                 <td title="{{ item.categoria }} / {{ item.sub_categoria }}">{{item.nombre_medicamento}}</td>
 
 
 
@@ -64,12 +64,80 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <td>{{item.forma_farmaceutica}}</td>
                 <td>{{item.via_de_administracion}}</td>
 <td>{{ item.envase_primario }}</td>
-
-                     <td>
-                         {% if item.uaps == True %} UAPS - {% endif %}{% if item.cis == True %} CIS - {% endif %}{% if item.p == True %} P {% endif %}
-                  </td>
+  <script>var contador='';</script>
+             <script>var contador2='';</script>
+                   <td>
+                         {% if item.uaps == True %}<script>var contador='UAPS';</script> {% endif %}
+                   {% if item.cis == True %} <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'CIS';
+                   }else {
+                       var contador= contador + ' - CIS';
+                   }
+                       </script>
+                   {% endif %}
+                   {% if item.p == True %}
+                        <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'P';
+                   }else {
+                       var contador= contador + ' - P';
+                   }
+                       </script>
+                   {% endif %}
+                         <script>document.write(contador);</script>
+                     </td>
             <td>
-                 {% if item.hb == True %}HB - {% endif %}{% if item.hg == True %}HG - {% endif %}{% if item.hesp == True %}HESP - {% endif %}{% if item.inst == True %}INST - {% endif %}{% if item.hpsiq == True %}HPSIQ{% endif %}
+                 {% if item.hb == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HB';
+                   }else {
+                       var contador2= contador2 + ' - HB';
+                   }
+                       </script>
+                 {% endif %}{% if item.hg == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HG';
+                   }else {
+                       var contador2= contador2 + ' - HG';
+                   }
+                       </script>
+                 {% endif %}
+                {% if item.hesp == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HESP';
+                   }else {
+                       var contador2= contador2 + ' - HESP';
+                   }
+                       </script>
+                {% endif %}{% if item.inst == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'INST';
+                   }else {
+                       var contador2= contador2 + ' - INST';
+                   }
+                       </script>
+                {% endif %}{% if item.hpsiq == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HPSIQ';
+                   }else {
+                       var contador2= contador2 + ' - HPSIQ';
+                   }
+                       </script>
+                {% endif %}
+             <script>document.write(contador2);</script>
             </td>
 
             </tr>
@@ -79,10 +147,10 @@ tr:nth-child(even){background-color: #f2f2f2}
         </tbody>
         <tfoot>
             <tr>
-              <th id="hola">No</th>
-                  <th>Código ATC</th>
+              <th>No</th>
+                         <th>Código ATC</th>
+                    <th>Nombre del Medicamento</th>
 
-                     <th>Nombre del Medicamento</th>
 
 
                 <th>Concentración </th>
