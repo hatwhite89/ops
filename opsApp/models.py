@@ -56,7 +56,7 @@ class ViasDeAdministracion(models.Model):
             return self.nombre_via_administracion
 
 class Medicamento(models.Model):
-
+      correlativo = models.IntegerField(null= True)
       categoria = models.ForeignKey(CategoriaMedicamento)
       sub_categoria = models.ForeignKey(SubCategoriaMedicamento)
       segunda_subcategoria=models.ForeignKey(SegundaSubCategoriaMedicamento)
