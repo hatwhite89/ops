@@ -27,7 +27,7 @@ def acuerdo(request):
     return render(request,'acuerdo.html')
 
 def listadoNacionalMedicamentos2(request):
-    lista_categoria= CategoriaMedicamento.objects.all()
+    lista_categoria= CategoriaMedicamento.objects.all().order_by('correlativo')
 
     return render(request,'lnm2.html',{'lista_categoria':lista_categoria})
 def listadoNacionalMedicamentosDetalle(request):

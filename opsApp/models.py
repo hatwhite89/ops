@@ -34,7 +34,7 @@ class SegundaSubCategoriaMedicamento(models.Model):
 class CategoriaMedicamento(models.Model):
       nombre_categoria=models.CharField(max_length=200)
       fecha_creacion=models.DateField(null=True)
-      correlativo=models.IntegerField()
+      correlativo=models.IntegerField(null=True)
       def __str__(self):
             return self.nombre_categoria
 
