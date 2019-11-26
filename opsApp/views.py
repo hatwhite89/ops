@@ -16,7 +16,7 @@ def paginaContenido(request):
     return render(request,'contenido.html',{'lista_contenido':lista,'listar_contenido':lista_contenido})
 
 def listadoNacionalMedicamentos(request):
-    listado_medicamentos= Medicamento.objects.all()
+    listado_medicamentos= Medicamento.objects.all().order_by('correlativo')
     return  render(request,'listado_nacional_medicamentos.html',{'listado_medicamentos':listado_medicamentos})
 
 def archivo(request):
@@ -32,7 +32,7 @@ def listadoNacionalMedicamentos2(request):
     return render(request,'lnm2.html',{'lista_categoria':lista_categoria})
 def listadoNacionalMedicamentosDetalle(request):
     id_categoria=request.GET['id_categoria']
-    medicamento_list =Medicamento.objects.filter(categoria=id_categoria)
+    medicamento_list =Medicamento.objects.filter(categoria=id_categoria).order_by('correlativo')
 
     return render(request, 'lnm_detalle.html', {'listado_medicamentos': medicamento_list})
 
