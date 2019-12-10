@@ -102,3 +102,13 @@ class link_ios_descarga(models.Model):
       link= models.TextField(null=True)
       def __str__(self):
             return self.nombre_link
+
+class sugerencias(models.Model):
+      titulo= models.CharField(max_length=200,null=True)
+      correo= models.CharField(max_length=200,null=True)
+      cuerpo= models.TextField()
+      estado= models.BooleanField(False)
+
+      def __str__(self):
+            if (self.estado == False):
+                return self.titulo

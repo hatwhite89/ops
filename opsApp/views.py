@@ -39,3 +39,6 @@ def listadoNacionalMedicamentosDetalle(request):
 def politicas(request):
 
     return  render(request,'politicas.html')
+
+def sugerencias(request):
+    return render(request, 'sugerencia.html')

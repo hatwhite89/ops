@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    <div id="loader" xmlns="http://www.w3.org/1999/html">
+
+        <div class="loader-spinner">
+        </div>
+
+    </div>
+
+    <section class="blog section-top-space">
+
+        <i class="fa fa-newspaper-o background-icon"></i>
+
+        <div class="center">
+
+            <ul class="recent-news recent-news-full">
+
+                <li class="recent-news-single">
+
+                    <div class="recent-news-full-content">
+        <br><br>   <br><br>
+<h1>
+Sugerencias o problemas encontrados</h1>
+<p class="-align-justify">
+Tus comentarios son importantes para nosotros, puedes escribirnos a la siguiente dirección de correo electrónico mimail@ejemplo.com o bien a través de el siguiente formulario, agradecemos mucho tu ayuda para el mejoramiento de esta herramienta.</p>
+<br>
+                        <br>
+                        <br><br><br><br><br><br>
+
+                           <br><br>   <br><br>   <br><br>
+
+
+                    </div>
+
+                    <div class="clear">
+                    </div>
+
+                </li>
+
+            </ul>
+
+            <div class="sidebar">
+                <div class="padding">
+
+                <i class="fa fa-envelope-o background-icon"></i>
+<br><br><br><br>
+                <h3>Sugerencias</h3>
+
+
+
+                <form method="post" class="form">
+
+                    <h4>Detalle:</h4>
+                    <input type="text" name="Name" placeholder="Tu nombre ..." class="contact-form-element contact-form-client-name" />
+                    <input type="text" name="Phone number" placeholder="Titulo..." class="contact-form-element last" />
+                    <input type="text" name="E-mail" placeholder="Tu  e-mail..." class="contact-form-element contact-form-client-email" />
+                    <textarea type="text" name="Title" placeholder="Sugerencia..." class="contact-form-element contact-form-client-message-title last" /></textarea
+
+                </form>
+                       <button class="button button-navy-blue "  >Enviar Sugerencia <i class="fa fa-send"></i></button>
+       </div>
+
+            </div>
+
+            <div class="clear">
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+{%  endblock %}

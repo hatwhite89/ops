@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^lnme/$', views.listadoNacionalMedicamentos, name="lnme"),
     url(r'^lnme2/$', views.listadoNacionalMedicamentos2, name="lnme2"),
     url(r'^politicas/$', views.politicas, name="politicas"),
+    url(r'^sugerencia/$', views.sugerencias, name="sugerencia"),
     url(r'^lnm_detalle/$', views.listadoNacionalMedicamentosDetalle, name="lnm_detalle"),
 ]
 if settings.DEBUG:

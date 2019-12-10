@@ -15,8 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{% static '_libs/no-ui-slider/jquery.nouislider.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static '_libs/animate.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static '_css/style.css' %}" />
-
-      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" />
 </head>
 <body>
@@ -106,6 +105,7 @@
 <h1>Otros Links</h1>
                 <br>
                 <ul class="left">
+                      <li><a href="{% url 'sugerencia' %}" style="color: white;text-decoration: none;text-transform: uppercase;" >Sugerencias o problemas encontrados</a></li>
                     <li><a href="{% url 'politicas' %}" style="color: white;text-decoration: none;text-transform: uppercase;" >Política de uso</a></li>
                    <li>
 
@@ -156,27 +156,17 @@
 
     </footer>
 <div></div>
-    <!--
-    facebook SDK
-    -->
-    <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+
 
     <script src="{% static '_libs/jquery.js'%}"></script>
-    <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
     <script src="{% static '_libs/no-ui-slider/jquery.nouislider.all.min.js'%}"></script>
     <script src="{% static '_libs/smoothscroll.js'%}"></script>
     <script src="{% static '_libs/parallax.js'%}"></script>
     <script src="{% static '_js/functions.js'%}"></script>
 
 
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="{% static '_js/jquery.dataTables.min.js'%}"></script>
 <script src="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css"></script>
  <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
@@ -185,7 +175,7 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
-
+    <script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"></script>
 
     <script>$(document).ready(function() {
 // Setup - add a text input to each footer cell
@@ -209,33 +199,40 @@ if (i >0){
 
 
 var table = $('#example').DataTable( {
-
-            orderCellsTop: true,
-    fixedHeader: true,
-
+  headers: {
+    'Access-Control-Allow-Credentials' : true,
+    'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Methods':'GET',
+    'Access-Control-Allow-Headers':'application/json',
+  },
+        orderCellsTop: true,
+         fixedHeader: true,
+        "filter": false,
         responsive: true,
-        dom: 'Bfrtip',
-        buttons: [
+         dom: 'Bfrtip',
+
+
+ pageLength : 10,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
+
+            language: {
+ sLengthMenu:"Mostrar _MENU_ registros",
+
+            search: "Filtrar:",
+
+            info: "Mostrando _START_ de  _END_ de _TOTAL_ Registros",
+            paginate: {
+            first:      "Primero",
+            previous:   "Anterior",
+            next:       "Siguiente",
+            last:       "último",
+        },
+    },
+    buttons: ['pageLength',
             {  extend: 'pdfHtml5',
                 orientation: 'landscape',
                 pageSize: 'LEGAL'}
         ],
- pageLength : 10,
-    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
-        language: {
-        search: "Filtrar:",
-
-
-         info: "Mostrando _START_ a  _END_ de _TOTAL_ entradas",
-             paginate: {
-            first:      "Primero",
-            previous:   "Anterior",
-            next:       "Siguiente",
-            last:       "último"
-
-        },
-    },
-
     },
     );
 

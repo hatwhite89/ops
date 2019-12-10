@@ -44,6 +44,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <th>Envase primario</th>
                 <th>1er Nivel</th>
                 <th>2do Nivel</th>
+                          <th>Observaciones</th>
             </tr>
         </thead>
         <tbody>
@@ -139,7 +140,11 @@ tr:nth-child(even){background-color: #f2f2f2}
                 {% endif %}
              <script>document.write(contador2);</script>
             </td>
-
+ <td>
+     {% if item.restriccion_uso is not null %}
+     {{item.restriccion_uso}}
+ {% endif %}
+ </td>
             </tr>
 
 {%  endfor %}
@@ -159,6 +164,7 @@ tr:nth-child(even){background-color: #f2f2f2}
                 <th>Envase primario</th>
                 <th>1er Nivel</th>
                 <th>2do Nivel</th>
+                <th>Observaciones</th>
             </tr>
         </tfoot>
     </table>
