@@ -1,6 +1,8 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, render_to_response
+from django.http import HttpResponse
+import json
 # Create your views here.
+from django.db.models import Q
 from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga
 
 
@@ -42,3 +44,19 @@ def politicas(request):
 
 def sugerencias(request):
     return render(request, 'sugerencia.html')
+
+def search(request):
+    query = request.GET.get('q', '')
+    if query:
+        qset = (
+            Q(nombre_medicamento__icontains=query) |
+            Q(codigo_atc__icontains=query)
+
+        )
+        results = Medicamento.objects.filter(qset).distinct()
+    else:
+        results = []
+    return render_to_response("buscador.html", {
+        "results": results,
+        "query": query
+    })

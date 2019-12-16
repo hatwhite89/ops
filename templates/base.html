@@ -17,6 +17,44 @@
     <link rel="stylesheet" type="text/css" href="{% static '_css/style.css' %}" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" />
+
+<style>
+#mySidenav a {
+  position: absolute;
+  left: -40px;
+  transition: 0.3s;
+  padding: 15px;
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#about {
+  top: 20px;
+  background-color: #f44336;
+}
+
+#blog {
+  top: 80px;
+  background-color: #2196F3;
+}
+
+#projects {
+  top: 140px;
+  background-color: #f44336;
+}
+
+#contact {
+  top: 200px;
+  background-color: #555
+}
+</style>
 </head>
 <body>
 
@@ -84,7 +122,10 @@
             </div>
 
         </div>
+<div id="mySidenav" class="sidenav">
+  <a href="{% url 'busquedaProyecto' %}" id="about" >  Buscador Rapido  <span class="fa fa-search align-right"></span></a>
 
+</div>
     </header>
 
 
@@ -175,9 +216,10 @@
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
-    <script src="https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json"></script>
+
 
     <script>$(document).ready(function() {
+
 // Setup - add a text input to each footer cell
 $('#example thead tr').clone(true).appendTo( '#example thead' );
 $('#example thead tr:eq(1) th').each( function (i) {
@@ -207,7 +249,7 @@ var table = $('#example').DataTable( {
   },
         orderCellsTop: true,
          fixedHeader: true,
-        "filter": false,
+
         responsive: true,
          dom: 'Bfrtip',
 

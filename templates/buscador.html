@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="loader">
+
+        <div class="loader-spinner">
+        </div>
+
+    </div>
+    <section  class="blog section-top-space" style="margin-left: 2%;margin-right: 2%">
+        <div class="recent-news-full-content">
+        <br>      <br>      <br>      <br>
+          <br>      <br>      <br>      <br>
+ <h1>Buscador </h1>
+        <p style="color: red">Instrucciones</p>
+        <p class="-align-justify">El buscador realiza coincidencias con nombres de medicamentos, vías de administración o código ATC.En algunos casos puede escribir parte de la palabra, por ejemplo, puede escribir “ace” y esto retornara búsquedas relacionadas con acetaminofén.</p>
+ <br>
+            <p>Asegúrese de escribir bien las palabras, estas pueden llevar acentos.</p>
+        <br>
+        <br>
+  <form action="." method="GET">
+    <label for="q">Escriba sus busquedas : </label>
+    <input type="text" name="q" value="{{ query|escape }}">
+    <input type="submit" value="Buscar">
+  </form>
+
+  {% if query %}
+    <h2>Resultados para "{{ query|escape }}":</h2>
+<br>
+    {% if results %}
+      <ul>
+      {% for book in results %}
+        <li>{{ book | escape }}</li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No existen resultados, intente recortar la palabra</p>
+    {% endif %}
+  {% endif %}
+        </div>
+    </section>
+    <br> <br> <br> <br>
+{% endblock %}
