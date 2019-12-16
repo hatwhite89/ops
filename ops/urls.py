@@ -31,6 +31,7 @@ urlpatterns = [
     url(r'^sugerencia/$', views.sugerencias, name="sugerencia"),
     url(r'^lnm_detalle/$', views.listadoNacionalMedicamentosDetalle, name="lnm_detalle"),
     url(r'^busqueda/$', views.search, name='busquedaProyecto'),
+    url(r'^detalle_busqueda/$', views.detalleBuscador, name='detalle_busqueda'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

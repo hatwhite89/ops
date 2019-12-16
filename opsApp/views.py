@@ -42,6 +42,11 @@ def politicas(request):
 
     return  render(request,'politicas.html')
 
+def detalleBuscador(request):
+    id_medicamento = request.GET['cod']
+    medicamento_detalle = Medicamento.objects.filter(pk=id_medicamento)
+    return render(request,'detalle_buscador.html',{'medicamento_list':medicamento_detalle})
+
 def sugerencias(request):
     return render(request, 'sugerencia.html')
 

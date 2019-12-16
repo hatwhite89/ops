@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+ <div id="loader">
+
+        <div class="loader-spinner">
+        </div>
+
+    </div>
+
+    <section class="blog section-top-space">
+    <br><br><br><br>
+
+     <div class="recent-news-full-content">
+<h1 class="center">DETALLE MEDICAMENTO</h1>
+
+         {%  for item in medicamento_list %}
+             <label>Codigo ATC</label>
+             {{ item.codigo_atc }}
+                  <br><br>
+             <label>Nombre Medicamento:</label>
+             {{ item.nombre_medicamento }}
+             <br><br>
+             <label>Categoria</label>
+             {{ item.categoria }}
+              <br><br>
+         {% endfor %}
+        </div>
+            <section>
+{% endblock %}
