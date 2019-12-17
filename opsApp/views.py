@@ -49,6 +49,8 @@ def detalleBuscador(request):
 
 def sugerencias(request):
     return render(request, 'sugerencia.html')
+def ayuda(request):
+    return render(request,'ayuda.html')
 
 def search(request):
     query = request.GET.get('q', '')
