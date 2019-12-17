@@ -28,8 +28,10 @@
 <br>
     {% if results %}
       <ul>
-      {% for book in results %}
-        <li><a href="{% url 'detalle_busqueda' %}?cod={{ book.id }}">{{ book | escape }}</a></li>
+      {% for medicamento in results %}
+          <li><a  href="{% url 'detalle_busqueda' %}?cod={{ medicamento.id }}">{{ medicamento | escape }} <span class="fa fa-hand-o-left"></span></a><br><span style="font-size: small">{{ medicamento.categoria }}<br>{{ medicamento.via_de_administracion }}<br>{{ medicamento.contentracion }}</span> </li>
+      <hr>
+          <br>
       {% endfor %}
       </ul>
     {% else %}
@@ -38,5 +40,6 @@
   {% endif %}
         </div>
     </section>
+    <br> <br> <br> <br>
     <br> <br> <br> <br>
 {% endblock %}

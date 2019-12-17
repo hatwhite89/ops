@@ -11,20 +11,142 @@
     <section class="blog section-top-space">
     <br><br><br><br>
 
-     <div class="recent-news-full-content">
-<h1 class="center">DETALLE MEDICAMENTO</h1>
+     <div class="recent-news-full-content" style="margin-right: 5%;margin-left: 5%">
+     <center>
+<h1 class="center">DETALLE MEDICAMENTO</h1></center>
 
          {%  for item in medicamento_list %}
-             <label>Codigo ATC</label>
+             <label style="font-weight: bold;">Código ATC:</label>
              {{ item.codigo_atc }}
-                  <br><br>
-             <label>Nombre Medicamento:</label>
+                  <br>
+             <hr>
+             <br>
+             <label style="font-weight: bold; ">Nombre del Medicamento:</label>
              {{ item.nombre_medicamento }}
-             <br><br>
-             <label>Categoria</label>
+             <br>
+               <hr>
+             <br>
+             <label style="font-weight: bold;">Categoría:</label>
              {{ item.categoria }}
-              <br><br>
+              <br>
+              <hr>
+             <br>
+             <label style="font-weight: bold;">Concentración:</label>
+             {{ item.contentracion }}
+              <br>
+             <hr>
+             <br>
+             <label style="font-weight: bold;">Forma farmacéutica:</label>
+             {{ item.forma_farmaceutica }}
+              <br>
+             <hr>
+             <br>
+             <label style="font-weight: bold;">Via de administración:</label>
+             {{ item.via_de_administracion }}
+              <br>
+              <hr>
+             <br>
+             <label style="font-weight: bold;">Envase primario:</label>
+             {{ item.envase_primario }}
+              <br>
+              <hr>
+             <br>
+             <label style="font-weight: bold;">Nivel de atención:</label>
+             {{ item.nivel_de_atencion }}
+             <hr>
+             <br>
+             <label style="font-weight: bold;">Establecimientos:</label>
+              <script>var contador='';</script>
+             <script>var contador2='';</script>
+
+                         {% if item.uaps == True %}<script>var contador='UAPS';</script> {% endif %}
+                   {% if item.cis == True %} <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'CIS';
+                   }else {
+                       var contador= contador + ' - CIS';
+                   }
+                       </script>
+                   {% endif %}
+                   {% if item.p == True %}
+                        <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'P';
+                   }else {
+                       var contador= contador + ' - P';
+                   }
+                       </script>
+                   {% endif %}
+                         <script>document.write(contador);</script>
+
+                 {% if item.hb == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HB';
+                   }else {
+                       var contador2= contador2 + ' - HB';
+                   }
+                       </script>
+                 {% endif %}{% if item.hg == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HG';
+                   }else {
+                       var contador2= contador2 + ' - HG';
+                   }
+                       </script>
+                 {% endif %}
+                {% if item.hesp == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HESP';
+                   }else {
+                       var contador2= contador2 + ' - HESP';
+                   }
+                       </script>
+                {% endif %}{% if item.inst == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'INST';
+                   }else {
+                       var contador2= contador2 + ' - INST';
+                   }
+                       </script>
+                {% endif %}{% if item.hpsiq == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HPSIQ';
+                   }else {
+                       var contador2= contador2 + ' - HPSIQ';
+                   }
+                       </script>
+                {% endif %}
+             <script>document.write(contador2);</script>
+              <br>
+
+             {% if item.restriccion_uso != null %}
+                 <hr>
+             <br>
+             <label style="font-weight: bold;">Restricciones de uso :</label>
+             {{ item.restriccion_uso }}
+             {% endif %}
+              {% if item.lista_complementaria != null %}
+                  <hr>
+             <br>
+             <label style="font-weight: bold;">{{ item.lista_complementaria }}</label>
+
+             {% endif %}
+<br><br>
+
          {% endfor %}
+
         </div>
             <section>
 {% endblock %}
