@@ -29,7 +29,11 @@
     {% if results %}
       <ul>
       {% for medicamento in results %}
-          <li><a  href="{% url 'detalle_busqueda' %}?cod={{ medicamento.id }}">{{ medicamento | escape }} <span class="fa fa-hand-o-left"></span></a><br><span style="font-size: small">{{ medicamento.categoria }}<br>{{ medicamento.via_de_administracion }}<br>{{ medicamento.contentracion }}</span> </li>
+          <li><a  href="{% url 'detalle_busqueda' %}?cod={{ medicamento.id }}">{{ medicamento | escape }} <span class="fa fa-hand-o-left"></span></a>
+              <br><span style="font-size: small">{{ medicamento.categoria }}<br>
+                  {{ medicamento.via_de_administracion }}<br>
+                  {{ medicamento.contentracion }}<br>
+              </span> </li>
       <hr>
           <br>
       {% endfor %}

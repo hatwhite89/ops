@@ -39,7 +39,7 @@ class CategoriaMedicamento(models.Model):
             return self.nombre_categoria
 
 class FormaFarmaceutica(models.Model):
-      nombre_forma=models.CharField(max_length=200)
+      nombre_forma=models.CharField(max_length=200,null=True)
       fecha_creacion=models.DateField(null=True)
       def __str__(self):
             return self.nombre_forma
@@ -50,7 +50,7 @@ class EnvasePrimario(models.Model):
             return self.tipo_embase
 
 class ViasDeAdministracion(models.Model):
-      nombre_via_administracion = models.CharField(max_length=200)
+      nombre_via_administracion = models.CharField(max_length=200,null=True)
       fecha_creacion = models.DateField(null=True)
       def __str__(self):
             return self.nombre_via_administracion
@@ -62,7 +62,7 @@ class Medicamento(models.Model):
       segunda_subcategoria=models.ForeignKey(SegundaSubCategoriaMedicamento)
       codigo_atc = models.CharField(max_length=200)
       nombre_medicamento = models.CharField(max_length=200)
-      contentracion = models.TextField()
+      contentracion = models.TextField(blank=True,null=True)
       forma_farmaceutica = models.ForeignKey(FormaFarmaceutica)
       via_de_administracion = models.ForeignKey(ViasDeAdministracion)
       envase_primario = models.ForeignKey(EnvasePrimario)
