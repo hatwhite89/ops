@@ -63,7 +63,12 @@ tr:nth-child(even){background-color: #f2f2f2}
 
                 <td>{{item.contentracion}}</td>
                 <td>{{item.forma_farmaceutica}}</td>
-                <td>{{item.via_de_administracion}}</td>
+                <td> {% if item.via_de_administracion != "otros" %}
+<td>{{ item.envase_primario }}</td>
+            {% endif %}
+            {% if item.via_de_administracion == "otros" %}
+            {% endif %}
+                </td>
 <td>{{ item.envase_primario }}</td>
   <script>var contador='';</script>
              <script>var contador2='';</script>
