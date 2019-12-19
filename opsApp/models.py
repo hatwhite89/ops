@@ -51,11 +51,10 @@ class EnvasePrimario(models.Model):
 
 class ViasDeAdministracion(models.Model):
       nombre_via_administracion = models.CharField(max_length=200,null=True,blank=True)
+      valor= models.CharField(null=True,blank=True)
       fecha_creacion = models.DateField(null=True)
       def __str__(self):
-            if (self.nombre_via_administracion == ''):
-                  return ""
-
+            
             return self.nombre_via_administracion
 
 class Medicamento(models.Model):
