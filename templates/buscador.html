@@ -29,10 +29,90 @@
     {% if results %}
       <ul>
       {% for medicamento in results %}
-          <li><a  href="{% url 'detalle_busqueda' %}?cod={{ medicamento.id }}">{{ medicamento | escape }} <span class="fa fa-hand-o-left"></span></a>
-              <br><span style="font-size: small">{{ medicamento.categoria }}<br>
-                  {{ medicamento.via_de_administracion }}<br>
-                  {{ medicamento.contentracion }}<br>
+          <li><p style="font-weight: bold;color: red;">{{ medicamento | escape }}</p>
+              <br><span style="font-weight: bold;" >Categoría: </span><span style="font-size: small;">{{ medicamento.categoria }}</span><br>
+                  <p ><span style="font-weight: bold;"> Código ATC: </span> {{ medicamento.codigo_atc }}</p>
+                  <p ><span style="font-weight: bold;">Vía de Administración: </span> {{ medicamento.via_de_administracion }}</p>
+                  <p ><span style="font-weight: bold;">Concentración: </span>{{ medicamento.contentracion }}</p>
+                  <p ><span style="font-weight: bold;">Forma Farmacéutica: </span> {{ medicamento.forma_farmaceutica }}</p>
+                  <p ><span style="font-weight: bold;">Envase Primario: </span>{{ medicamento.envase_primario }}</p>
+                  <p ><span style="font-weight: bold;">Nivel de atención: </span>{{ medicamento.nivel_de_atencion }}</p>
+                  <p ><span style="font-weight: bold;">Establecimientos: </span> <script>var contador='';</script>
+             <script>var contador2='';</script>
+
+                         {% if medicamento.uaps == True %}<script>var contador='UAPS';</script> {% endif %}
+                   {% if medicamento.cis == True %} <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'CIS';
+                   }else {
+                       var contador= contador + ' - CIS';
+                   }
+                       </script>
+                   {% endif %}
+                   {% if medicamento.p == True %}
+                        <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'P';
+                   }else {
+                       var contador= contador + ' - P';
+                   }
+                       </script>
+                   {% endif %}
+                         <script>document.write(contador);</script>
+
+                 {% if medicamento.hb == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HB';
+                   }else {
+                       var contador2= contador2 + ' - HB';
+                   }
+                       </script>
+                 {% endif %}{% if medicamento.hg == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HG';
+                   }else {
+                       var contador2= contador2 + ' - HG';
+                   }
+                       </script>
+                 {% endif %}
+                {% if medicamento.hesp == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HESP';
+                   }else {
+                       var contador2= contador2 + ' - HESP';
+                   }
+                       </script>
+                {% endif %}{% if medicamento.inst == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'INST';
+                   }else {
+                       var contador2= contador2 + ' - INST';
+                   }
+                       </script>
+                {% endif %}{% if medicamento.hpsiq == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HPSIQ';
+                   }else {
+                       var contador2= contador2 + ' - HPSIQ';
+                   }
+                       </script>
+                {% endif %}
+             <script>document.write(contador2);</script></p>
+
+
+                  <br>
               </span> </li>
       <hr>
           <br>
