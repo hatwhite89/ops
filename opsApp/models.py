@@ -51,7 +51,7 @@ class EnvasePrimario(models.Model):
 
 class ViasDeAdministracion(models.Model):
       nombre_via_administracion = models.CharField(max_length=200,null=True,blank=True)
-      valor= models.CharField(null=True,blank=True,max_length=200)
+
       fecha_creacion = models.DateField(null=True)
       def __str__(self):
 
