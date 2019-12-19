@@ -141,8 +141,11 @@ tr:nth-child(even){background-color: #f2f2f2}
              <script>document.write(contador2);</script>
             </td>
  <td>
+  {% if item.lista_complementaria is not null %}
+      <p style="font-weight: bold;">{{ item.lista_complementaria }}</p>
+ {% endif %}
      {% if item.restriccion_uso is not null %}
-   {{ item.lista_complementaria }} <p>  </p> {{item.restriccion_uso}}
+  {{item.restriccion_uso}}
  {% endif %}
  </td>
             </tr>

@@ -55,7 +55,7 @@ class ViasDeAdministracion(models.Model):
       fecha_creacion = models.DateField(null=True)
       def __str__(self):
 
-            return self.nombre_via_administracion+self.valor
+            return self.nombre_via_administracion
 
 class Medicamento(models.Model):
       correlativo = models.IntegerField(null= True)
