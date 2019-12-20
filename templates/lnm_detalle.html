@@ -56,7 +56,7 @@ tr:nth-child(even){background-color: #f2f2f2}
             <tr>
                 <td>{{ item.correlativo}}</td>
                   <td style="font-family: Verdana;">{{item.codigo_atc}}</td>
-                 <td title="{{ item.categoria }} / {{ item.sub_categoria }}">{{item.nombre_medicamento}}</td>
+                 <td title="{{ item.categoria }} / {{ item.sub_categoria }}">{{item.nombre_medicamento | safe}}</td>
 
                 <td>{{item.contentracion}}</td>
                 <td>{{item.forma_farmaceutica}}</td>
