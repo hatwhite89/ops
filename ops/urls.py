@@ -23,7 +23,7 @@ from opsApp import views
 urlpatterns = [
     url(r'^$', views.main, name="main"),
     url('^admin/', admin.site.urls),
-    url(r'^ayuda/$', views.ayuda, name='ayuda'),
+    url(r'^ayuda/$', views.help, name='ayuda'),
     url(r'^pagina_contenido/$', views.paginaContenido, name="pagina_contenido"),
     url(r'^archivos/$', views.archivo, name="archivos"),
     url(r'^lnme/$', views.listadoNacionalMedicamentos, name="lnme"),
