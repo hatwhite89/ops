@@ -36,19 +36,18 @@
 
                         <span id="mb{{ item.id }}"></span>
     <br>
-    <br>
+
 
     <script>
-var mb=Math.round({{ item.archivo.size}}/1048576) ;
+var mb=Math.round({{ item.archivo.size}}/1048576 ) ;
 var tam="Tamaño";
 document.getElementById('mb{{ item.id }}').innerHTML = tam+" "+mb+" MB";
 </script>
-                        <div class="clear">
-                        </div>
+
 
                     </li>
 {% endfor %}
-
+ <br> <br> <br>
                 </ul>
 
             </div>

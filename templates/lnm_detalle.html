@@ -26,10 +26,13 @@ tr:nth-child(even){background-color: #f2f2f2}
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
 <section class="content section-top-space section-gray" style="overflow-x:auto;">
+<script>$('#example').dataTable( {
+  scrollX: false,
 
+} );</script>
 
 <section >
-<table id="example" class="display" style="width:100%">
+<table id="example" class="display table" >
         <thead>
             <tr>
                 <th>No</th>
