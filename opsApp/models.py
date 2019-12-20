@@ -116,7 +116,7 @@ class sugerencias(models.Model):
                 return self.titulo
 
 class ayuda (models.Model):
-      nombre= models.CharField(null=False,blank=False)
+      nombre= models.CharField(null=True,blank=True, max_length=200)
       contenido = RichTextField()
       def __str__(self):
             return self.nombre
