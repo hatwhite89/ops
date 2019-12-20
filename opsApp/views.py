@@ -3,7 +3,7 @@ from django.http import HttpResponse
 import json
 # Create your views here.
 from django.db.models import Q
-from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga
+from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda
 
 
 def main(request):
@@ -50,7 +50,8 @@ def detalleBuscador(request):
 def sugerencias(request):
     return render(request, 'sugerencia.html')
 def ayuda(request):
-    return render(request,'ayuda.html')
+    list_ayuda = ayuda.objects.all()
+    return render(request,'ayuda.html',{'lista_medicamento':list_ayuda})
 
 def search(request):
     query = request.GET.get('q', '')
