@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+    <section style="margin-left: 5%;margin-right: 5%;">
     {% for item in lista_medicamento %}
         {{ item.contenido | safe }}
     {% endfor %}
+    </section>
 {% endblock %}
