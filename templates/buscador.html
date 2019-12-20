@@ -29,7 +29,7 @@
     {% if results %}
       <ul>
       {% for medicamento in results %}
-          <li><p style="font-weight: bold;color: red;">{{ medicamento | escape }}</p>
+          <li><p style="font-weight: bold;color: red;">{{ medicamento | safe }}</p>
               <br><span style="font-weight: bold;" >Categoría: </span><span style="font-size: small;">{{ medicamento.categoria }}</span><br>
                   <p ><span style="font-weight: bold;"> Código ATC: </span> {{ medicamento.codigo_atc }}</p>
                   <p ><span style="font-weight: bold;">Vía de Administración: </span> {{ medicamento.via_de_administracion }}</p>
