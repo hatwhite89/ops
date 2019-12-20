@@ -114,3 +114,5 @@ class sugerencias(models.Model):
       def __str__(self):
             if (self.estado == False):
                 return self.titulo
+class ayuda (models.Model):
+      contenido = RichTextField()
