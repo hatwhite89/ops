@@ -49,6 +49,7 @@ def detalleBuscador(request):
 
 def sugerencias(request):
     return render(request, 'sugerencia.html')
+
 def ayuda(request):
     list_ayuda = ayuda.objects.all()
     return render(request,'ayuda.html',{'lista_medicamento':list_ayuda})

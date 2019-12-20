@@ -114,5 +114,9 @@ class sugerencias(models.Model):
       def __str__(self):
             if (self.estado == False):
                 return self.titulo
+
 class ayuda (models.Model):
+      nombre= models.CharField(null=False,blank=False)
       contenido = RichTextField()
+      def __str__(self):
+            return self.nombre
