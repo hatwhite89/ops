@@ -37,6 +37,9 @@
                   <p ><span style="font-weight: bold;">Forma Farmacéutica: </span> {{ medicamento.forma_farmaceutica }}</p>
                   <p ><span style="font-weight: bold;">Envase Primario: </span>{{ medicamento.envase_primario }}</p>
                   <p ><span style="font-weight: bold;">Nivel de atención: </span>{{ medicamento.nivel_de_atencion }}</p>
+
+
+
                   <p ><span style="font-weight: bold;">Establecimientos: </span> <script>var contador='';</script>
              <script>var contador2='';</script>
 
@@ -110,10 +113,16 @@
                        </script>
                 {% endif %}
              <script>document.write(contador2);</script></p>
-
-
+          <!--FIN DE LAS VALIDACIONES DE LO ESTABLECIMIENTOS-->
+                {% if medicamento.lista_complementaria is not null %}
+           <p> <span style="font-weight: bold;">{{ medicamento.lista_complementaria }}</span></p>
+          {% endif %}
+          {% if medicamento.restriccion_uso != " " %}
+               <p><span style="font-weight: bold;">Observaciones: </span>{{ medicamento.restriccion_uso }}</p>
+          {% endif %}
                   <br>
-              </span> </li>
+              </span>
+          </li>
       <hr>
           <br>
       {% endfor %}
