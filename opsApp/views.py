@@ -1,9 +1,9 @@
-from django.shortcuts import render, render_to_response
+from django.shortcuts import render, render_to_response,redirect
 from django.http import HttpResponse
 import json
 # Create your views here.
 from django.db.models import Q
-from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda
+from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda, sugerencias
 
 
 def main(request):
@@ -47,8 +47,21 @@ def detalleBuscador(request):
     medicamento_detalle = Medicamento.objects.filter(pk=id_medicamento)
     return render(request,'detalle_buscador.html',{'medicamento_list':medicamento_detalle})
 
-def sugerencias(request):
+def sugerencias_view(request):
+
     return render(request, 'sugerencia.html')
+
+def respuesta_sugerencia(request):
+
+    titulo_v = request.GET['titulo']
+    correo = request.GET['correo']
+    cuerpo = request.GET['cuerpo']
+
+    newSugerencia = sugerencias(titulo =titulo_v,correo=correo ,cuerpo =cuerpo )
+
+    newSugerencia.save()
+
+    return redirect('/sugerencia')
 
 def help(request):
     list_ayuda = ayuda.objects.all()
