@@ -2,6 +2,7 @@ from django.shortcuts import render, render_to_response,redirect
 from django.http import HttpResponse
 import json
 # Create your views here.
+from  opsApp.form  import FormularioSugerencia
 from django.db.models import Q
 from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda, sugerencias
 
@@ -62,6 +63,21 @@ def respuesta_sugerencia(request):
     newSugerencia.save()
 
     return redirect('/sugerencia')
+
+def correoSugerencia(request):
+    form = FormularioSugerencia(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            new_sugerencia = sugerencias(
+                titulo= request.POST["titulo"],
+                correo= request.POST["correo"],
+                cuerpo= request.POST["cuerpo"]
+            )
+            new_sugerencia.save(form)
+
+            return render(request,'index.html',{'bandera':"verdadero"})
+    form = FormularioSugerencia()
+    return render(request,'sugerencia.html',{'form':form})
 
 def help(request):
     list_ayuda = ayuda.objects.all()

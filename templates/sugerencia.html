@@ -49,16 +49,13 @@ Tus comentarios son importantes para nosotros, puedes escribirnos a la siguiente
 
 
 
-                <form method="post" class="form">
-
-                    <h4>Detalle:</h4>
-                    <input type="text" name="Name" placeholder="Tu nombre ..." class="contact-form-element contact-form-client-name" />
-                    <input type="text" name="Phone number" placeholder="Titulo..." class="contact-form-element last" />
-                    <input type="text" name="E-mail" placeholder="Tu  e-mail..." class="contact-form-element contact-form-client-email" />
-                    <textarea type="text" name="Title" placeholder="Sugerencia..." class="contact-form-element contact-form-client-message-title last" /></textarea
+                <form method="POST" class="form" action="{% url 'respuesta_sugerencia' %}">
+ {% csrf_token %}
+                     {{ form.as_p }}
+                           <button class="button button-navy-blue " style="background-color: #fdb63a"  >Enviar Sugerencia <i class="fa fa-send"></i></button>
 
                 </form>
-                       <button class="button button-navy-blue "  >Enviar Sugerencia <i class="fa fa-send"></i></button>
+                    <br>
        </div>
 
             </div>

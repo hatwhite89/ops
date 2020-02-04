@@ -109,11 +109,10 @@ class sugerencias(models.Model):
       titulo= models.CharField(max_length=200,null=True)
       correo= models.CharField(max_length=200,null=True)
       cuerpo= models.TextField()
-      estado= models.BooleanField(False)
+
 
       def __str__(self):
-            if (self.estado == False):
-                return self.titulo
+           return self.titulo
 
 class ayuda (models.Model):
       nombre= models.CharField(null=True,blank=True, max_length=200)
