@@ -119,3 +119,5 @@ class ayuda (models.Model):
       contenido = RichTextField()
       def __str__(self):
             return self.nombre
+class portada(models.Model):
+      contenido = RichTextField()

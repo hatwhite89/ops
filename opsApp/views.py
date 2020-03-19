@@ -4,13 +4,14 @@ import json
 # Create your views here.
 from  opsApp.form  import FormularioSugerencia
 from django.db.models import Q
-from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda, sugerencias
+from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda, sugerencias,portada
 
 
 def main(request):
     link_android = link_android_descarga.objects.all()
     link_ios = link_android_descarga.objects.all()
-    return render(request,'index.html',{'lista_android':link_android,'lista_ios':link_ios})
+    portadas = portada.objects.all()
+    return render(request,'index.html',{'lista_android':link_android,'lista_ios':link_ios,'portada':portadas})
 
 def paginaContenido(request):
     id_contenido=request.GET['id_contenido']
@@ -77,6 +78,7 @@ def correoSugerencia(request):
 
             return render(request,'index.html',{'bandera':"verdadero"})
     form = FormularioSugerencia()
+
     return render(request,'sugerencia.html',{'form':form})
 
 def help(request):
