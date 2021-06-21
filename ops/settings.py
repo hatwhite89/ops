@@ -25,7 +25,7 @@ SECRET_KEY = 'f0%0(gf(ki+_k1)p3e#&ph(x6kszhy!xts&sd@odvp8*w7!x6n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["ip","localhost","127.0.0.1","181.210.30.34","170.50.7.243"]
+ALLOWED_HOSTS = ["181.210.30.34"," 172.50.7.243","127.0.0.1"]
 
 
 # Application definition
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'ops.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ops',
-        'USER': 'doadmin',
-        'PASSWORD': 'kjx0d4w1mmc74dnk',
-        'HOST': 'db-postgresql-nyc1-12588-do-user-3261074-0.db.ondigitalocean.com',
-        'PORT': '25060',
+        'NAME': 'lnme',
+        'USER': 'postgres',
+        'PASSWORD': 'alexandra',
+        'HOST': '10.77.82.110',
+        'PORT': '5432',
     }
 }
 

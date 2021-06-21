@@ -4,7 +4,7 @@ import json
 # Create your views here.
 from  opsApp.form  import FormularioSugerencia
 from django.db.models import Q
-from opsApp.models import Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda, sugerencias,portada
+from opsApp.models import NivelAtencion,Contenido,Medicamento,ArchivosGaceta,CategoriaMedicamento,link_android_descarga,link_ios_descarga, ayuda, sugerencias,portada
 
 
 def main(request):
@@ -34,6 +34,18 @@ def listadoNacionalMedicamentos2(request):
     lista_categoria= CategoriaMedicamento.objects.all().order_by('correlativo')
 
     return render(request,'lnm2.html',{'lista_categoria':lista_categoria})
+
+def listadoNacionalMedicamentos3(request):
+    lista_categoria= NivelAtencion.objects.all().order_by('id')
+
+    return render(request,'lnm3.html',{'lista_categoria':lista_categoria})
+
+def listadoNacionalMedicamentosDetalle3(request):
+    id_categoria=request.GET['id_categoria']
+    medicamento_list =Medicamento.objects.raw('SELECT * FROM "opsApp_medicamento" where '+id_categoria+'=true')
+
+    return render(request, 'lnm_detalle3.html', {'listado_medicamentos': medicamento_list})
+
 def listadoNacionalMedicamentosDetalle(request):
     id_categoria=request.GET['id_categoria']
     medicamento_list =Medicamento.objects.filter(categoria=id_categoria).order_by('correlativo')

@@ -1,9 +1,37 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
+    <div><br><br></div>
     <section style="margin-left: 5%;margin-right: 5%;">
+    <center>
+    <h1>Haga click sobre el enlace de su interes</h1></center><p>Pregunta:</p>
     {% for item in lista_medicamento %}
-        {{ item.contenido | safe }}
-    {% endfor %}
+
+
+
+
+
+    <div id="accordion" >
+
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h5 class="mb-0">
+        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+         {{ item.nombre }}
+        </button>
+      </h5>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+      <div class="card-body">
+       {{ item.contenido | safe }}     </div>
+    </div>
+  </div>
+
+
+
+  </div>
+</div>
+        {% endfor %}
+    <br>    <br>    <br>    <br>
     </section>
 {% endblock %}

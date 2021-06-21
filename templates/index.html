@@ -2,119 +2,24 @@
 {% load staticfiles %}
 {% block content %}
 
-    <div id="loader">
-
-        <div class="loader-spinner">
-        </div>
-
-    </div>
                  
+<div>
+<img  class="responsive"  src="{% static '_img/fondo_listado.png' %}" alt="logo" />
+</div>
 
 
 
 
 
-
-    <div class="heading">
-    
-        <div class="heading-slides">
-        
-            <div class="heading-slide-single" data-slide-id="1" style="background-image: url( '{% static '_img/shutterstock_495868924.jpg' %}' );">
-            
-
-                
-
-                
-                <div class="heading-content">
-
-                    <h2>Listado Nacional de Medicamentos Esenciales</h2>
-                    <h3>Disponible en Google Play Store y<br /> AppStore</h3>
-                    {% for item in lista_android %}
-                   <a href="{{ item.link }}"> <button class="button button-navy-blue "   > Descargar<i class="fa fa-android"></i></button></a>
-                    {% endfor %}
-                     {% for item in lista_ios %}
-        <a href="{{ item.link }}"> <button class="button button-navy-blue "  >Descargar <i class="fa fa-apple"></i></button></a>
-                  {% endfor %}
-                </div>
-            
-            </div>
-            
-            <div class="heading-slide-single" data-slide-id="2" style="background-image: url( '{% static '_img/shutterstock_685642123.jpg' %}' );">
-            
+    <section class="insurances-slider section" style="background-color: orange; color: white;">
 
 
-                
-                <div class="heading-content" style="color: white">
-                    
-                    <h2  style="color: white">Busca la aplicación en Play Store y AppStore</h2>
-  <h3 style="color: white">Disponible en Google Play Store y<br /> AppStore</h3>
-      {% for item in lista_android %}
-                   <a href="{{ item.link }}"> <button class="button button-navy-blue "   > Descargar<i class="fa fa-android"></i></button></a>
-                    {% endfor %}
-                     {% for item in lista_ios %}
-        <a href="{{ item.link }}"> <button class="button button-navy-blue "  >Descargar <i class="fa fa-apple"></i></button></a>
-                  {% endfor %}
-                </div>
-
-                </div>
-            
-            </div>
-        
-        </div>
-
-    </div>
-    
-
-    <section class="section" style="">
-
-        <div class="content center  " style="margin-top: 5%;margin-bottom: 5%">
-
-
-              <div class="content-tab-single  top">
-
-
-
-        {% for items in portada %}
-
-            {{ items.contenido | safe }}
-                  {% endfor %}
-              </div>
-        </div>
-    </section>
-    <section class="insurances-slider section" style="background-color: #9498ab; color: white;">
-
-        <div class="center">
-
-            <div class="green-line">
-            </div>
-<style>.responsive {
-  width: 100%;
-  height: auto;
-}</style>
-            <div class="images">
-
-
-             <img   src="{% static 'imagenes/playstore.png' %}" alt="logo" />
-                  <img  src="{% static 'imagenes/appstore.png' %}" alt="logo" />
-
-            </div>
-
+<img  style="margin-top: 5%" class="responsive"  src="{% static '_img/descargar.png' %}" alt="logo" />
             <div class="content">
-
-
-              <div class="descriptions">
-
-                <h2>
-¡Descarga la aplicación ahora!
-</h2>
-                  <p style="color: white;">
-                      Descarga la aplicación desde las tiendas AppStore y PlayStore, sigue los links o encuentra la aplicación como <span style="font-weight: bold;text-transform: uppercase;">listado nacional de medicamentos hn.</span>
-La aplicación es totalmente gratis, no necesitas registrarte ni pagar por una suscripción.
-
-                  </p>
-
-
-                </div>
+<br><br>
+                <h2>¡Descarga la aplicación ahora!</h2>
+                <p style="color: white;height:auto;">Descarga la aplicación desde las tiendas AppStore y PlayStore, sigue los links o encuentra la aplicación como <span style="font-weight: bold;text-transform: uppercase;">listado nacional de medicamentos hn.</span>
+La aplicación es totalmente gratis, no necesitas registrarte ni pagar por una suscripción.</p>
 
 
             </div>
@@ -122,26 +27,15 @@ La aplicación es totalmente gratis, no necesitas registrarte ni pagar por una s
             <div class="clear">
             </div>
 
-        </div>
 
     </section>
 
-
-
-
-
-
     <section class="contact section-gray " style="background-color: white">
     
-        <div class="center">
-        
-            <i class=""></i>
-
-
-
-
-                <img class="responsive" src="{% static '_img/logo_portada_sesal.png' %}">
-
+        <div >
+            <center>
+<img style="max-height: 350px;"  src="{% static '_img/logo_portada_sesal.png' %}">
+</center>
 </div>
 
 

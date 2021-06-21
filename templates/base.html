@@ -6,7 +6,7 @@
 
     <title>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES</title>
 
-<link rel="icon" type="image/png" href="{% static '_img/favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static '_img/favicon.png' %}">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -15,8 +15,8 @@
     <link rel="stylesheet" type="text/css" href="{% static '_libs/no-ui-slider/jquery.nouislider.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static '_libs/animate.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static '_css/style.css' %}" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" />
+
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161584235-1"></script>
 <script>
@@ -27,85 +27,52 @@
   gtag('config', 'UA-161584235-1');
 </script>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/3.1.9/css/fixedHeader.dataTables.min.css" />
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" />
 <style>
-#mySidenav a {
-  position: absolute;
-  left: -40px;
-  transition: 0.3s;
-  padding: 15px;
-  width: 100px;
-  text-decoration: none;
-  font-size: 20px;
-  color: white;
-  border-radius: 0 5px 5px 0;
-}
+    .navbar-inverse .navbar-nav > li > a{
+        color:white;
+    }
+    .navbar{
+        border:0px;
+        min-height:75px;margin-bottom:0px;
+    }
+    .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover
+    { background: orange;}
 
-#mySidenav a:hover {
-  left: 0;
-}
 
-#about {
-  top: 20px;
-  background-color: #f44336;
-}
-
-#blog {
-  top: 80px;
-  background-color: #fd8300;
-}
-
-#projects {
-  top: 140px;
-  background-color: #f44336;
-}
-
-#contact {
-  top: 200px;
-  background-color: #555
-}
 </style>
 </head>
+
 <body>
+ <nav class="navbar navbar-inverse" style="background: #0099d9;color:#fff; ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+  <a href="/" ><img style="max-height:60px; " class="responsive"  src="{% static 'imagenes/logo_paho.png' %}" alt="logo" /></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="/">Inicio</a></li>
 
+             <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Listado Nacional de Medicamentos
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="/lnme2">Por Categorías</a></li>
+          <li><a href="/lnme">LNME Completo</a></li>
+          <li><a href="/lnme3">Por Establecimiento</a></li>
+        </ul>
+      </li>
 
-    <header>
-        <div  >
-            <center>
-     <a href="/" ><img   height="110" src="{% static 'imagenes/logo_paho.png' %}" alt="logo" /></a>
-</center>
-</div>
-
-
-
-        <div style="margin-left: 2%;margin-right: 5%;">
-
-
-
-            <nav>
-
-                <ul class="menu">
-
-                    <li class="active"><a href="/">Inicio</a></li>
-
-
-                    <li>
-                        <a href="#">Listado Nacional de Medicamentos</a>
-                        <i class="fa fa-caret-down"></i>
-
-                        <ul class="submenu animated speed fadeInDown">
-                       <li> <a href="/lnme2">Por Categorías</a></li>
-                               <li>     <a href="/lnme">LNME Completo</a></li>
-       </ul>
-
-                    </li>
-                    <li>
-
-                        <a href="#">Contenido</a>
-                        <i class="fa fa-caret-down"></i>
-
-                        <ul class="submenu animated speed fadeInDown">
-
-                            <li><a href="{% url 'pagina_contenido' %}?id_contenido=1 ">Criterios técnicos para la selección</a></li>
+               <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contenido
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+             <li><a href="{% url 'pagina_contenido' %}?id_contenido=1 ">Criterios técnicos para la selección</a></li>
                             <li><a href="{% url 'pagina_contenido'  %}?id_contenido=2 ">Estructura del listado </a></li>
                             <li><a href="{% url 'pagina_contenido'  %}?id_contenido=3 ">Conceptos de lista complementaria</a></li>
                             <li><a href="{% url 'pagina_contenido'  %}?id_contenido=4 ">Antibiótico de reserva</a></li>
@@ -114,154 +81,86 @@
                             <li><a href="{% url 'pagina_contenido'  %}?id_contenido=7 "> Codificación</a></li>
                             <li><a href="{% url 'pagina_contenido'  %}?id_contenido=8 "> Formas farmacéuticas</a></li>
                             <li><a href="{% url 'pagina_contenido'  %}?id_contenido=9 ">Vías de administración </a></li>
+        </ul>
+      </li>
+          <li><a href="/archivos/">Archivos</a></li>
+      <li><a href="/ayuda/">Ayuda</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" action="/busqueda/">
 
-                        </ul>
-
-                    </li>
-<!--OTROS ENLACES-->
-
- <li><a href="/archivos/">Archivos</a></li>
-                </ul>
-
-                <div class="menu-responsive"><i class="fa fa-bars"></i></div>
-
-            </nav>
-
-            <div class="clear">
-            </div>
-
-        </div>
-<div id="mySidenav" class="sidenav">
-  <a href="{% url 'busquedaProyecto' %}" id="about" >  Buscar   <span class="fa fa-search align-right"></span></a>
-<a href="{% url 'ayuda' %}" id="blog" >  Ayuda  <span class="fa fa-info-circle align-right"></span></a>
-</div>
-    </header>
-
-
-
-{% block content %}
+      <button type="submit" class="btn btn-default">Buscador Rapido</button>
+    </form>
+  </div>
+</nav>
+ {% block content %}
 
         {% endblock %}
 
+<div class="mt-5 pt-5 pb-5 footer" style="background: #0099d9;color:white;lighting-color: #0099d9;">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-xs-12 about-company">
+      <h2>Listado Nacional De Medicamentos Esenciales</h2>
 
-    <footer >
+         </div>
+    <div class="col-lg-4 col-xs-12 links">
+      <h4 class="mt-lg-0 mt-sm-3">Links</h4>
+        <ul class="m-0 p-0">
+          <li>- <a style="color:ghostwhite;" href="http://www.salud.gob.hn/site/">Secretaría de Salud</a></li>
+          <li>- <a style="color:ghostwhite;" href="https://www.facebook.com/saludhn/">Facebook SESAL</a></li>
+          <li>- <a style="color:ghostwhite;" href="https://www.paho.org/hon/">OPS HONDURAS</a></li>
+          <li>- <a  style="color:ghostwhite;" href="https://www.facebook.com/OPS-Honduras-PAHO-Honduras-157522440950103/">Facebook OPS</a></li>
+          <li>- <a style="color:ghostwhite;" href="{% url 'politicas' %}">Política de uso</a></li>
+          <li>- <a style="color:ghostwhite;" href="{% url 'sugerencia' %}">Sugerencias o problemas encontrados</a></li>
+        </ul>
+    </div>
 
-        <div  >
-
-            <div class="green-line">
-            </div>
-
-            <nav style="margin-left: 5%;">
-<h1>Otros Links</h1>
-                <br>
-                <ul class="left">
-                      <li><a href="{% url 'sugerencia' %}" style="color: white;text-decoration: none;text-transform: uppercase;" >Sugerencias o problemas encontrados</a></li>
-                    <li><a href="{% url 'politicas' %}" style="color: white;text-decoration: none;text-transform: uppercase;" >Política de uso</a></li>
-                   <li>
-
-                        <h4><a href="http://www.salud.gob.hn/site/" style="color: white;text-decoration: none;">Secretaría de Salud</a></h4>
-                        <ul class="sub">
-
-                               <li ><a style="color: white;text-decoration: none;" href="https://www.facebook.com/saludhn/" target="_blank" >Facebook</a></li>
- <li ><a style="color: white;text-decoration: none;" href="https://twitter.com/saludhn?lang=es" target="_blank">Twitter</a></li>
-
-
-                        </ul>
-
-                    </li>
-                    <li>
-
-                        <h4><a href="https://www.paho.org/hon/" style="color: white;text-decoration: none;">OPS HONDURAS</a></h4>
-                        <ul class="sub">
-
-                                                       <li ><a style="color: white;text-decoration: none;" href="https://www.facebook.com/OPS-Honduras-PAHO-Honduras-157522440950103/" target="_blank">Facebook</a></li>
- <li ><a style="color: white;text-decoration: none;" href="https://twitter.com/pahowho?lang=es"  target="_blank">Twitter</a></li>
-
-                        </ul>
-
-                    </li>
+  </div>
+  <div class="row mt-5">
+    <div class="col copyright">
+      <p class=""><small class="text-white-50">© Organización Panamericana de la Salud 2021.</small></p>
+    </div>
+  </div>
+</div>
+</div>
 
 
+                 <script src="{% static '_libs/jquery.js'%}"></script>
+                <script src="{% static '_libs/no-ui-slider/jquery.nouislider.all.min.js'%}"></script>
+                <script src="{% static '_libs/smoothscroll.js'%}"></script>
+                <script src="{% static '_libs/parallax.js'%}"></script>
+                <script src="{% static '_js/functions.js'%}"></script>
 
 
-
-                </ul>
-
-            </nav>
-
-            <ul class="right">
-
-                <li style="color: white; margin-right: 5%;">© Organización Panamericana de la Salud 2019.</li>
-
-            </ul>
-
-            <div class="clear">
-            </div>
-
-        </div>
-
-
-
-        </div>
-
-    </footer>
-<div></div>
-
-
-    <script src="{% static '_libs/jquery.js'%}"></script>
-
-    <script src="{% static '_libs/no-ui-slider/jquery.nouislider.all.min.js'%}"></script>
-    <script src="{% static '_libs/smoothscroll.js'%}"></script>
-    <script src="{% static '_libs/parallax.js'%}"></script>
-    <script src="{% static '_js/functions.js'%}"></script>
-
-
-    <script src="{% static '_js/jquery.dataTables.min.js'%}"></script>
-<script src="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css"></script>
- <script src="https://cdn.datatables.net/buttons/1.5.6/js/dataTables.buttons.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
                 <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.flash.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-                <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
-                <script src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+                <script src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.print.min.js"></script>
 
-
-    <script>$(document).ready(function() {
-
-// Setup - add a text input to each footer cell
-$('#example thead tr').clone(true).appendTo( '#example thead' );
-$('#example thead tr:eq(1) th').each( function (i) {
-    var title = $(this).text();
-
-if (i >0  ){
-    $(this).html( '<input type="text" placeholder="Filtrar '+title+'" />' );
-       $( 'input', this ).on( 'keyup change', function () {
-        if ( table.column(i).search() !== this.value ) {
-            table
-                .column(i)
-                .search( this.value )
-                .draw();
-        }
-    } );
-}
-
-} );
-
+   <script src="https://cdn.datatables.net/fixedcolumns/3.3.3/js/dataTables.fixedColumns.min.js"></script>
+      <script src="https://cdn.datatables.net/fixedheader/3.1.9/js/dataTables.fixedHeader.min.js"></script>
+<script>$(document).ready(function() {
 
 var table = $('#example').DataTable( {
-  headers: {
-    'Access-Control-Allow-Credentials' : true,
-    'Access-Control-Allow-Origin':'*',
-    'Access-Control-Allow-Methods':'GET',
-    'Access-Control-Allow-Headers':'application/json',
-  },
+
+     scrollY:        "500px",
+        scrollX:        true,
+        scrollCollapse: true,
+
+        fixedColumns:   {
+            leftColumns: 2,
+            rightColumns: 0
+        },
 
 
-
+ responsive: true,
 
          dom: 'Bfrtip',
-
 
  pageLength : 10,
     lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
@@ -279,18 +178,85 @@ var table = $('#example').DataTable( {
             last:       "último",
         },
     },
-    buttons: ['pageLength',
+    buttons: [{extend:'pageLength',text:'No. De filas'},
+        {extend:'excel',
+        text:'Exportar Excel'},
             {  extend: 'pdfHtml5',
-                orientation: 'landscape',
-                pageSize: 'LEGAL'}
+                text:'Exportar PDF'
+,                orientation: 'landscape',
+                pageSize: 'LEGAL',
+  customize: function ( doc ) {
+                    doc.content.splice( 1, 0, {
+                        margin: [ 0, 0, 0, 12 ],
+                        alignment: 'left',
+                        text:'UAPS: Unidad de Atención Primaria en Salud \n CIS: Centro Integral de Salud \n P: Policlínico \n HB: Hospital Básico \n HG: Hospital General \n HESP: Hospital de Especialidades \n INST: Instituto \n HPSIQ: Hospital Psiquiátrico'
+
+                                   } );
+                }
+  },
+
         ],
     },
     );
+    new $.fn.dataTable.FixedHeader( table );
 
+} );
+
+    </script>
+
+<script>$(document).ready(function() {
+
+var table2 = $('#example2').DataTable( {
+
+     scrollY:        "500px",
+        scrollX:        true,
+        scrollCollapse: true,
+
+        fixedColumns:   {
+            leftColumns: 2,
+            rightColumns: 0
+        },
+
+
+ responsive: true,
+
+         dom: 'Bfrtip',
+
+ pageLength : 10,
+    lengthMenu: [[5, 10, 20, -1], [5, 10, 20, 'Todos']],
+
+            language: {
+ sLengthMenu:"Mostrar _MENU_ registros",
+
+            search: "Filtrar:",
+
+            info: "Mostrando _START_ de  _END_ de _TOTAL_ Registros",
+            paginate: {
+            first:      "Primero",
+            previous:   "Anterior",
+            next:       "Siguiente",
+            last:       "último",
+        },
+    },
+    buttons: [{extend:'pageLength',text:'No. De filas'},
+        {extend:'excel',
+        text:'Exportar Excel'},
+            {  extend: 'pdfHtml5',
+                text:'Exportar PDF'
+,                orientation: 'landscape',
+                pageSize: 'LEGAL',
+
+  },
+
+        ],
+    },
+    );
+    new $.fn.dataTable.FixedHeader( table2 );
 
 } );
 
     </script>
 
 </body>
+
 </html>

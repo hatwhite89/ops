@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="blog section-top-space " >
+
+
+<center>
+    <h3>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h3>
+</center>
+
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+<section class="content section-top-space section-gray" style="overflow-x:auto;">
+
+
+<section >
+<table id="example3" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>No</th>
+
+                <th>Categoría</th>
+ <th>Ver Medicamentos</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+
+            <tr>
+                <td>1</td>
+
+            <td>UAPS: Unidad de Atención Primaria en Salud</td>
+
+<td><a href="{% url 'lnm_detalle3'  %}?id_categoria=uaps">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+          <tr>
+                <td>2</td>
+
+            <td>CIS: Centro Integral de Salud</td>
+
+<td><a href="{% url 'lnm_detalle3'  %}?id_categoria=cis">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+
+                  <tr>
+                <td>3</td>
+
+            <td>P: Policlínico</td>
+
+<td><a href="{% url 'lnm_detalle3'  %}?id_categoria=p">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+                  <tr>
+                <td>4</td>
+
+            <td>HB: Hospital Básico</td>
+
+<td><a href="{% url 'lnm_detalle3'  %}?id_categoria=hb">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+                  <tr>
+                <td>5</td>
+
+            <td>HG: Hospital General</td>
+
+<td><a href="{% url 'lnm_detalle3'  %}?id_categoria=hg">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+                  <tr>
+                <td>6</td>
+
+            <td>HESP: Hospital de Especialidades</td>
+
+<td><a href="{% url 'lnm_detalle3'  %}?id_categoria=hesp">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+                  <tr>
+                <td>7</td>
+
+            <td>INST: Instituto</td>
+
+<td><a href={% url 'lnm_detalle3'  %}?id_categoria=inst">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+                  <tr>
+                <td>8</td>
+
+            <td>HPSIQ: Hospital Psiquiátrico</td>
+
+<td><a href="{% url 'lnm_detalle3'  %}?id_categoria=hpsiq">Ver los medicamentos de este establecimiento</a></td>
+
+
+
+            </tr>
+        </tbody>
+
+    </table>
+</section>
+
+
+</section>
+</section>
+
+{% endblock %}

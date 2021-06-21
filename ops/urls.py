@@ -28,10 +28,12 @@ urlpatterns = [
     url(r'^archivos/$', views.archivo, name="archivos"),
     url(r'^lnme/$', views.listadoNacionalMedicamentos, name="lnme"),
     url(r'^lnme2/$', views.listadoNacionalMedicamentos2, name="lnme2"),
+url(r'^lnme3/$', views.listadoNacionalMedicamentos3, name="lnme3"),
     url(r'^politicas/$', views.politicas, name="politicas"),
     url(r'^sugerencia/$', views.sugerencias_view, name="sugerencia"),
     url(r'^respuesta_sugerencia/$', views.correoSugerencia, name="respuesta_sugerencia"),
     url(r'^lnm_detalle/$', views.listadoNacionalMedicamentosDetalle, name="lnm_detalle"),
+    url(r'^lnm_detalle3/$', views.listadoNacionalMedicamentosDetalle3, name="lnm_detalle3"),
     url(r'^busqueda/$', views.search, name='busquedaProyecto'),
     url(r'^detalle_busqueda/$', views.detalleBuscador, name='detalle_busqueda'),
 ]
