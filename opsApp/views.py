@@ -23,6 +23,10 @@ def listadoNacionalMedicamentos(request):
     listado_medicamentos= Medicamento.objects.all().order_by('correlativo')
     return  render(request,'listado_nacional_medicamentos.html',{'listado_medicamentos':listado_medicamentos})
 
+def listadoNacionalMedicamentos531(request):
+    listado_medicamentos= Medicamento.objects.raw('SELECT distinct on (nombre_medicamento,contentracion) * FROM public."opsApp_medicamento"')
+    return  render(request,'listado_nacional_medicamentos_original.html',{'listado_medicamentos':listado_medicamentos})
+
 def archivo(request):
     lista_gaceta=ArchivosGaceta.objects.all()
     return render(request, 'archivos.html', {'lista_gaceta':lista_gaceta})
@@ -103,6 +107,7 @@ def search(request):
         qset = (
             Q(nombre_medicamento__icontains=query) |
             Q(codigo_atc__icontains=query)
+
 
         )
         results = Medicamento.objects.filter(qset).distinct()

@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'ops.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-
+#prueba
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lnme',
+        'NAME': 'lnme2',
         'USER': 'postgres',
         'PASSWORD': 'alexandra',
         'HOST': '10.77.82.110',

@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="blog section-top-space " style="">
+
+
+<center>
+    <h3>LISTADO NACIONAL DE MEDICAMENTOS ESENCIALES (LNME) 2018 - SECRETARÍA DE SALUD </h3>
+<hr>
+</center>
+
+
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+  Instrucciones
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Instrucciones</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <p style="color: red;">Instrucciones de uso:</p><p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/sy1t4chF2Dk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<section class="content section-top-space section-gray" style="overflow-x:auto;">
+
+ <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" />
+<section >
+<table id="example" class="display " style="width:100%">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Código ATC</th>
+                <th>Nombre del Medicamento</th>
+                <th>Concentración </th>
+                <th>Forma Farmacéutica</th>
+                <th>Vía de Administración</th>
+                <th>Envase primario</th>
+                <th>1er Nivel</th>
+                <th>2do Nivel</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody >
+  {% for item in listado_medicamentos %}
+            <tr>
+                <td>{{ forloop.counter  }}</td>
+                <td style="font-family: Verdana;" >{{item.codigo_atc}}</td>
+                <td title="{{ item.categoria }} / {{ item.sub_categoria }}">{{item.nombre_medicamento |safe }}</td>
+                <td>{{item.contentracion}}</td>
+                <td>{{item.forma_farmaceutica}}</td>
+                <td>{% if item.via_de_administracion.valor == False %}{{ item.via_de_administracion }}{% endif %}</td>
+
+<td>{{ item.envase_primario }}</td>
+  <script>var contador='';</script>
+             <script>var contador2='';</script>
+                   <td>
+                         {% if item.uaps == True %}<script>var contador='UAPS';</script> {% endif %}
+                   {% if item.cis == True %} <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'CIS';
+                   }else {
+                       var contador= contador + ' - CIS';
+                   }
+                       </script>
+                   {% endif %}
+                   {% if item.p == True %}
+                        <script>
+                   if (contador=='')
+                   {
+                       var contador= contador + 'P';
+                   }else {
+                       var contador= contador + ' - P';
+                   }
+                       </script>
+                   {% endif %}
+                         <script>document.write(contador);</script>
+                     </td>
+            <td>
+                 {% if item.hb == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HB';
+                   }else {
+                       var contador2= contador2 + ' - HB';
+                   }
+                       </script>
+                 {% endif %}{% if item.hg == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HG';
+                   }else {
+                       var contador2= contador2 + ' - HG';
+                   }
+                       </script>
+                 {% endif %}
+                {% if item.hesp == True %}
+                     <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HESP';
+                   }else {
+                       var contador2= contador2 + ' - HESP';
+                   }
+                       </script>
+                {% endif %}{% if item.inst == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'INST';
+                   }else {
+                       var contador2= contador2 + ' - INST';
+                   }
+                       </script>
+                {% endif %}{% if item.hpsiq == True %}
+                 <script>
+                   if (contador2=='')
+                   {
+                       var contador2= contador2 + 'HPSIQ';
+                   }else {
+                       var contador2= contador2 + ' - HPSIQ';
+                   }
+                       </script>
+                {% endif %}
+             <script>document.write(contador2);</script>
+            </td>
+ <td>
+  {% if item.lista_complementaria is not null %}
+      <p style="font-weight: bold;">{{ item.lista_complementaria }}</p>
+ {% endif %}
+     {% if item.restriccion_uso is not null %}
+  {{item.restriccion_uso | safe }}
+
+ {% endif %}
+ </td>
+            </tr>
+
+{%  endfor %}
+
+        </tbody>
+ <!--       <tfoot >
+            <tr>
+              <th>No</th>
+                         <th>Código ATC</th>
+                    <th>Nombre del Medicamento</th>
+
+
+
+                <th>Concentración </th>
+                <th>Forma Farmacéutica</th>
+                <th>Vía de Administración</th>
+                <th>Envase primario</th>
+                <th>1er Nivel</th>
+                <th>2do Nivel</th>
+                <th>Observaciones</th>
+            </tr>
+        </tfoot>-->
+    </table>
+</section>
+
+
+</section>
+</section>
+
+{% endblock %}
