@@ -78,7 +78,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ops.wsgi.application'
 
 
-# Databasesss
+# Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 #prueba 2
 DATABASES = {
